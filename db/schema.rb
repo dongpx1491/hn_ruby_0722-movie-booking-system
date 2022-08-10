@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_08_024203) do
+ActiveRecord::Schema.define(version: 2022_08_10_144926) do
 
   create_table "discounts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "code"
@@ -118,9 +118,10 @@ ActiveRecord::Schema.define(version: 2022_08_08_024203) do
     t.string "email"
     t.string "password_digest"
     t.string "phone_number"
-    t.integer "role"
+    t.integer "role", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "movies", "genres"

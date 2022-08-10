@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-2">
-        <div class="header__logo">
-          <%= link_to image_tag("logo1.png", alt: "Rails logo")%>
+        <div class="header__logo logo">
+          <%= link_to image_tag("logo1.png", class: "logo-image")%>
         </div>
       </div>
       <div class="col-lg-8">
@@ -20,21 +20,23 @@
         </div>
       </div>
       <div class="col-lg-2">
-          <div class="header__right">
-            <ul>
-              <li>
-                <a href="#" class="search-switch"><i class="fa fa-search" aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
-              </li>
-              <li>
-                <%= link_to t(".english"), locale: :en %>
-                <span> | </span>
-                <%= link_to t(".vietnamese"), locale: :vi %>
-              </li>
-            </ul>
-          </div>
+        <div class="header__right">
+          <ul>
+            <li>
+              <a href="#" class="search-switch"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <%= link_to signup_path do %>
+                <i class="fa fa-user" aria-hidden="true"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to t(".english"), locale: :en %>
+              <span> | </span>
+              <%= link_to t(".vietnamese"), locale: :vi %>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

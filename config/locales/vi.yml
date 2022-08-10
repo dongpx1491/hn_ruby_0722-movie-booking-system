@@ -17,3 +17,27 @@ vi:
     index:
       showing: "Đang công chiếu"
       coming_soon: "Sắp khởi chiếu"
+  shared:
+    error_messages:
+      content: "Biểu mẫu chứa"
+      error: "Lỗi"
+  users:
+    new:
+      sign_up: "Đăng kí"
+      p: "Chào mừng bạn tới Movie Booking App."
+      email: "Địa chỉ Email"
+      name: "Tên của bạn"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      date_of_birth: "Ngày sinh"
+      phone_number: "Số điện thoại"
+      submit: "Đăng kí"
+      have_account: "Bạn đã có tài khoản?"
+      log_in: "Đăng nhập!"
+      log_in_with: "Đăng nhập với:"
+      facebook: "Đăng nhập bằng Facebook"
+      google: "Đăng nhập bằng Google"
+      twitter: "Đăng nhập bằng Twitter"
+    create:
+      success: "Chào mừng bạn tới Movie Booking App!"
+      danger: "Tạo tài khoản thất bại"

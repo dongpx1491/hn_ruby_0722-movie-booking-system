@@ -17,3 +17,27 @@ en:
     index:
       showing: "Now Showing"
       coming_soon: "Coming soon"
+  shared:
+    error_messages:
+      content: "The form contains"
+      error: "error"
+  users:
+    new:
+      sign_up: "Sign up"
+      p: "Welcome to Movie Booking App."
+      email: "Email address"
+      name: "Your name"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      date_of_birth: "Your date of birth"
+      phone_number: "Your phone number"
+      submit: "Sign up"
+      have_account: "Already have an account?"
+      log_in: "Log in!"
+      log_in_with: "Login With:"
+      facebook: "Sign in With Facebook"
+      google: "Sign in With Google"
+      twitter: "Sign in With Twitter"
+    create:
+      success: "Welcome to the Movie Booking App!"
+      danger: "Fail to create account"
