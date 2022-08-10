@@ -1,7 +1,5 @@
-5.times do
-  name = Faker::Book.unique.genre
-  Genre.create! name: name
-end
+Genre.create!([{name: 'Horror'}, {name: 'Comedy'}, {name: 'Action'}, {name: 'Adventure'}, {name: 'Fantasy'}])
+
 
 User.create!(
   name: "Admin User",
@@ -43,4 +41,4 @@ User.create!(
                director: director,
                status: status,
                genre_id: Genre.all.pluck(:id).sample)
-end
+  end

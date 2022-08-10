@@ -1,10 +1,12 @@
 vi:
+  movie_booking: Đặt vé xem phim
   date:
     formats:
       own: "%d-%m-%Y"
   time:
     formats:
       own: "%H:%M:%Ss"
+  movie: "Ứng dụng đặt vé xem phim"
   layouts:
     application:
     header:

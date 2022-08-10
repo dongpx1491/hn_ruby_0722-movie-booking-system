@@ -1,4 +1,4 @@
 class Seat < ApplicationRecord
-  belong_to :ticket
-  belong_to :room
+  belongs_to :ticket
+  belongs_to :room
 end

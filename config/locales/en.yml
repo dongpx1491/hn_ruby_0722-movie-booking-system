@@ -1,10 +1,12 @@
 en:
+  movie_booking: Movie booking
   date:
     formats:
       own: "%d-%m-%Y"
   time:
     formats:
       own: "%H:%M:%Ss"
+  movie: "Movie Ticket App"
   layouts:
     application:
     header:
@@ -48,6 +50,9 @@ en:
     error_messages:
       content: "The form contains"
       error: "error"
+    movie:
+      now_showing: "Now Showing"
+      coming_soon: "Coming Soon"
   users:
     new:
       sign_up: "Sign up"
