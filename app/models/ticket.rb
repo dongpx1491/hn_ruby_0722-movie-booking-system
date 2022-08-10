@@ -1,5 +1,5 @@
 class Ticket < ApplicationRecord
-  belong_to :show
-  belong_to :seat
-  belong_to :payment
+  belongs_to :show
+  belongs_to :seat
+  belongs_to :payment
 end

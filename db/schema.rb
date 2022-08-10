@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 2022_08_12_064649) do
   end
 
   create_table "payments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.decimal "total", precision: 10
-    t.boolean "status"
+    t.decimal "total", precision: 10, scale: 2, default: "0.0"
+    t.integer "status", default: 0
     t.bigint "user_id"
     t.bigint "discount_id"
     t.datetime "created_at", precision: 6, null: false
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2022_08_12_064649) do
   end
 
   create_table "seats", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "type"
+    t.integer "type_seat"
     t.decimal "price", precision: 10
     t.bigint "room_id"
     t.datetime "created_at", precision: 6, null: false
@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(version: 2022_08_12_064649) do
 
   create_table "tickets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.decimal "price", precision: 10
+    t.integer "status", default: 0
     t.bigint "show_id"
     t.bigint "payment_id"
     t.bigint "seat_id"
@@ -163,7 +164,6 @@ ActiveRecord::Schema.define(version: 2022_08_12_064649) do
   add_foreign_key "seats", "rooms"
   add_foreign_key "shows", "movies"
   add_foreign_key "shows", "rooms"
-  add_foreign_key "tickets", "payments"
   add_foreign_key "tickets", "seats"
   add_foreign_key "tickets", "shows"
   add_foreign_key "user_discounts", "discounts"
