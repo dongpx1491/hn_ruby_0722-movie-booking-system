@@ -1,0 +1,19 @@
+vi:
+  layouts:
+    application:
+    header:
+      english: "EN"
+      vietnamese: "VN"
+      homepage: "Trang chủ"
+      booking: "Đặt vé"
+      blog: "Góc điện ảnh"
+      contact: "Hỗ trợ"
+      member: "Thành viên"
+    footer:
+      copyright: "Bản quyền"
+      reserved: "Đã đăng ký bản quyền | Mẫu này được làm bằng"
+      by: "bởi"
+  movie:
+    index:
+      showing: "Đang công chiếu"
+      coming_soon: "Sắp khởi chiếu"

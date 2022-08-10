@@ -1,0 +1,26 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="footer__logo">
+          <%= link_to image_tag("logo1.png", alt: "Rails logo")%>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="footer__nav">
+          <ul>
+            <li class="active"><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <p>
+          <%= t ".copyright" %> &copy;<%= Time.now.year %> <%= t ".reserved" %> <i class="fa fa-heart" aria-hidden="true"></i> <%= t ".by" %> <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

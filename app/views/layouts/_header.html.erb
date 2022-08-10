@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+        <div class="header__logo">
+          <%= link_to image_tag("logo1.png", alt: "Rails logo")%>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="header__nav">
+          <nav class="header__menu mobile-menu">
+            <ul>
+              <li class="active"><a href="#"><%= t ".homepage" %></a></li>
+              <li><a href="#"><%= t ".booking" %></a></li>
+              <li><a href="#"><%= t ".blog" %></a></li>
+              <li><a href="#"><%= t ".contact" %></a></li>
+              <li><a href="#"><%= t ".member" %></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="col-lg-2">
+          <div class="header__right">
+            <ul>
+              <li>
+                <a href="#" class="search-switch"><i class="fa fa-search" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <%= link_to t(".english"), locale: :en %>
+                <span> | </span>
+                <%= link_to t(".vietnamese"), locale: :vi %>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+</header>
