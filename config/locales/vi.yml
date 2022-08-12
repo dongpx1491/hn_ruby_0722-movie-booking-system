@@ -9,6 +9,8 @@ vi:
       blog: "Góc điện ảnh"
       contact: "Hỗ trợ"
       member: "Thành viên"
+      edit: "Sửa thông tin"
+      log_out: "Đăng xuất"
     footer:
       copyright: "Bản quyền"
       reserved: "Đã đăng ký bản quyền | Mẫu này được làm bằng"
@@ -41,3 +43,15 @@ vi:
     create:
       success: "Chào mừng bạn tới Movie Booking App!"
       danger: "Tạo tài khoản thất bại"
+  sessions:
+    new:
+      login: "Đăng nhập"
+      p: "Chào mừng bạn tới Movie Booking App."
+      email: "Email"
+      password: "Mật khẩu"
+      new_user: "Bạn chưa có tài khoản?"
+      sign_up_now: "Đăng kí ngay !"
+      forgot_password: "Quên mật khẩu ?"
+      or: "Hoặc"
+    create:
+      danger: "Tài khoản và Mật khẩu không hợp lệ"

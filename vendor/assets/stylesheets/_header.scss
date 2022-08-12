@@ -10,6 +10,7 @@
 
 .header__logo {
     padding: 20px 0 17px;
+
     a {
         display: inline-block;
     }
@@ -117,8 +118,64 @@
             margin-right: 0;
         }
     }
+
+    ul {
+        li {
+            list-style: none;
+            display: inline-block;
+            position: relative;
+            margin-right: 16px;
+
+            &:hover {
+
+                a {
+                    // background: $primary-color;
+                    color: $white-color;
+                }
+
+                .dropdown {
+                    top: 62px;
+                    opacity: 1;
+                    visibility: visible;
+
+                    li {
+
+                        a {
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+
+            .dropdown {
+                position: absolute;
+                left: 0;
+                top: 82px;
+                width: 150px;
+                background: $white-color;
+                text-align: left;
+                padding: 5px 0;
+                z-index: 9;
+                opacity: 0;
+                visibility: hidden;
+                @include transition(all, .3s);
+
+                li {
+                    display: block;
+                    margin-right: 0;
+
+                    a {
+                        font-size: 14px;
+                        color: $heading-color;
+                        font-weight: 500;
+                        padding: 5px 20px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .slicknav_menu {
     display: none;
-  }
+}
