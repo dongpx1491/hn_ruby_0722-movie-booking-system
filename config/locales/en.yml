@@ -9,6 +9,8 @@ en:
       blog: "Cinema Blog"
       contact: "Contacts"
       member: "Member"
+      edit: "Edit users"
+      log_out: "Log out"
     footer:
       copyright: "Copyright"
       reserved: "All rights reserved | This template is made with"
@@ -41,3 +43,15 @@ en:
     create:
       success: "Welcome to the Movie Booking App!"
       danger: "Fail to create account"
+  sessions:
+    new:
+      login: "Log in"
+      p: "Welcome to Movie Booking App."
+      email: "Email"
+      password: "Password"
+      new_user: "Dont’t Have An Account?"
+      sign_up_now: "Register now!"
+      forgot_password: "Forgot Your Password?"
+      or: "Or"
+    create:
+      danger: "invalid email password combination"
