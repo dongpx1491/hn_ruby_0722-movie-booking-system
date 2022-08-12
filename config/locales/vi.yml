@@ -1,4 +1,10 @@
 vi:
+  date:
+    formats:
+      own: "%d-%m-%Y"
+  time:
+    formats:
+      own: "%H:%M:%Ss"
   layouts:
     application:
     header:
@@ -15,10 +21,29 @@ vi:
       copyright: "Bản quyền"
       reserved: "Đã đăng ký bản quyền | Mẫu này được làm bằng"
       by: "bởi"
-  movie:
+  movies:
+    not_found: "Không tìm thấy phim"
     index:
       showing: "Đang công chiếu"
       coming_soon: "Sắp khởi chiếu"
+    show:
+      details: "Chi tiết"
+      home: "Trang chủ"
+      movies: "Phim"
+      release: "Ngày khởi chiếu:"
+      director: "Đạo diễn:"
+      cast: "Diễn viên:"
+      status: "Trạng thái:"
+      language: "Ngôn ngữ:"
+      genre: "Thể loại:"
+      duration: "Độ dài:"
+      favorite: "Yêu thích"
+      booking: "Đặt vé"
+      comming: "Sắp khởi chiếu"
+      reviews: "Đánh giá"
+      comments: "Đánh giá của bạn"
+      review: "Đánh giá"
+      might_like: "Bạn có thể thích ..."
   shared:
     error_messages:
       content: "Biểu mẫu chứa"

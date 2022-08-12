@@ -1,4 +1,10 @@
 en:
+  date:
+    formats:
+      own: "%d-%m-%Y"
+  time:
+    formats:
+      own: "%H:%M:%Ss"
   layouts:
     application:
     header:
@@ -15,10 +21,29 @@ en:
       copyright: "Copyright"
       reserved: "All rights reserved | This template is made with"
       by: "by"
-  movie:
+  movies:
+    not_found: "Movie not found"
     index:
       showing: "Now Showing"
       coming_soon: "Coming soon"
+    show:
+      details: "Details"
+      home: "Home"
+      movies: "Movies"
+      release: "Release Date:"
+      director: "Director:"
+      cast: "Cast:"
+      status: "Status:"
+      language: "Language:"
+      genre: "Genre:"
+      duration: "Duration:"
+      favorite: "Favorite"
+      booking: "Booking Now"
+      coming: "Coming soon"
+      reviews: "Reviews"
+      comments: "Your Comment"
+      review: "Review"
+      might_like: "You might like ...."
   shared:
     error_messages:
       content: "The form contains"
