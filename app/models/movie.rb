@@ -7,5 +7,5 @@ class Movie < ApplicationRecord
   has_one_attached :image
 
   scope :release, ->{where "release_date >= ?", Time.zone.now}
-  scope :limitation, ->{limit Settings.model.limitation}
+  scope :limitation, ->{limit Settings.user.model.limitation}
 end

@@ -1,4 +1,6 @@
 vi:
+  application:
+    danger: "Vui lòng đăng nhập"
   movie_booking: Đặt vé xem phim
   date:
     formats:
@@ -6,6 +8,7 @@ vi:
   time:
     formats:
       own: "%H:%M:%Ss"
+      short: "%H:%M"
   movie: "Ứng dụng đặt vé xem phim"
   layouts:
     application:
@@ -23,6 +26,22 @@ vi:
       copyright: "Bản quyền"
       reserved: "Đã đăng ký bản quyền | Mẫu này được làm bằng"
       by: "bởi"
+  shows:
+    not_found: "Không tìm thấy phim"
+    index:
+      shows_list: "Danh sách suất chiếu"
+      shows: "Suất chiếu"
+    show:
+      seats_list: "Danh sách ghế:"
+      going: "Đi tới thanh toán"
+  tickets:
+    create:
+      success: "Thêm vé vào giỏ hàng thành công"
+      danger: "Không thể thêm vé vào giỏ hàng"
+  static_pages:
+    home:
+      now_showing: "Đang công chiếu"
+      coming_soon: "Sắp khởi chiếu"
   movies:
     not_found: "Không tìm thấy phim"
     index:
@@ -82,3 +101,6 @@ vi:
       or: "Hoặc"
     create:
       danger: "Tài khoản và Mật khẩu không hợp lệ"
+  seats:
+    seat:
+      confirm: "Thêm vé ?"
