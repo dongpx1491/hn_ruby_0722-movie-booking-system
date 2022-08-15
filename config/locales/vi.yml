@@ -10,6 +10,13 @@ vi:
   genre_create_failed: "Tạo thất bại"
   not_found: "Không tìm thấy"
   delete_denied: "Không thể xóa do tìm thấy phim có liên kết với thể loại này"
+  movie_update: "Cập nhật phim thành công"
+  movie_update_failed: "Cập nhật thất bại"
+  movie_delete: "Xóa phim thành công"
+  movie_delete_failed: "Xóa thất bại"
+  movie_create: "Tạo phim thành công"
+  movie_create_failed: "Tạo thất bại"
+  movie_delete_denied: "Không thể xóa do tìm thấy suất chiếu có liên kết với phim này"
   date:
     formats:
       own: "%d-%m-%Y"
@@ -133,10 +140,40 @@ vi:
       new:
         create: "Tạo thể loại mới"
     layouts:
-      dashboard: "Trang chủ"
-      movies: "Phim"
-      users: "Người dùng"
-      genres: "Thể loại"
-      tickets: "Vé"
-      revenue: "Doanh thu"
-      signout: "Đăng xuất"
+      sidebar:
+        dashboard: "Trang chủ"
+        movies: "Phim"
+        users: "Người dùng"
+        genres: "Thể loại"
+        shows: "Suất chiếu"
+        revenue: "Doanh thu"
+        signout: "Đăng xuất"
+    movies:
+      index:
+        id: "Mã phim"
+        movie: "Phim"
+        release_date: "Ngày công chiếu"
+        duration: "Thời lượng"
+        language: "Ngôn ngữ"
+        cast: "Diễn viên"
+        director: "Đạo diễn"
+        status: "Trạng thái"
+        action: "Các hành động"
+        create: "Tạo mới"
+      edit:
+        edit: "Chỉnh sửa"
+      form:
+        submit: "Chấp nhận"
+        movie: "Phim"
+        title: "Tiêu đề"
+        description: "Mô tả"
+        release_date: "Ngày công chiếu"
+        duration: "Thời lượng"
+        language: "Ngôn ngữ"
+        cast: "Diễn viên"
+        director: "Đạo diễn"
+        genre: "Thể loại"
+      new:
+        create: "Tạo mới"
+      movie:
+        confirm: "Bạn có chắc chắn không?"

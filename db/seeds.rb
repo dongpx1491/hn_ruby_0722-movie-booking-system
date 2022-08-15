@@ -24,7 +24,7 @@ User.create!(
   title = Faker::Movie.unique.title
   description = Faker::Lorem.sentence(word_count: 50)
   release_date = Faker::Date.between(from: "2010-09-23", to: "2021-09-15")
-  duration = Faker::Time.between(from: "01:59:59", to: "03:59:59")
+  duration = Faker::Number.between(from: 60, to: 300)
   language = Faker::Nation.language
   thumbnail = Faker::Avatar.image
   cast = Faker::Artist.unique.name

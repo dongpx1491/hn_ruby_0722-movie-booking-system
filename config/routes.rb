@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       root "static_pages#home"
       get "/home", to: "admin#home"
       resources :genres
+      resources :movies
     end
     root "static_pages#home"
     get "/movies", to: "movies#sort"

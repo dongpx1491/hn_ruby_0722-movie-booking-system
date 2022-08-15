@@ -1,4 +1,5 @@
 class Admin::AdminController < ApplicationController
+  before_action :is_admin?
   layout "admin/layouts/application"
 
   private

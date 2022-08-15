@@ -11,6 +11,12 @@ user:
     length: 10
 model:
   limitation: 6
+  limited: 10
 genre:
   name:
     max_length: 50
+movie:
+  name:
+    max_length: 50
+  content:
+    max_length: 1000

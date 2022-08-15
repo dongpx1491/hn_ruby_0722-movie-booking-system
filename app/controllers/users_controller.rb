@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to login_path
       flash[:success] = t ".success"
     else
-      flash[:danger] = t ".danger"
+      flash[:danger] = t "danger"
       render :new
     end
   end

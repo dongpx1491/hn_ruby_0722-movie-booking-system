@@ -1,0 +1,28 @@
+<%= form_for [:admin, @movie] do |f| %>
+
+  <%= f.label :title, t(".title") %>
+  <%= f.text_field :title, class: "form-control", id: "input-label" %>
+
+  <%= f.label :description, t(".description") %>
+  <%= f.text_field :description, class: "form-control", id: "input-label" %>
+
+  <%= f.label :release_date, t(".release_date") %>
+  <%= f.date_field :release_date, class: "form-control", id: "input-label" %>
+
+  <%= f.label :duration, t(".duration") %>
+  <%= f.text_field :duration, class: "form-control", id: "input-label" %>
+
+  <%= f.label :language, t(".language") %>
+  <%= f.text_field :language, class: "form-control", id: "input-label" %>
+
+  <%= f.label :cast, t(".cast") %>
+  <%= f.text_field :cast, class: "form-control", id: "input-label" %>
+
+  <%= f.label :director, t(".director") %>
+  <%= f.text_field :director, class: "form-control", id: "input-label" %>
+
+  <%= f.label :genre, t(".genre") %>
+  <%= collection_select(:movie, :genre_id, @genres, :id, :name, {}, {class: "form-control"} ) %>
+
+  <%= f.submit t(".submit"), class: "button btn btn-primary" %>
+<% end %>

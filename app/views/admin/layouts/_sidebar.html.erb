@@ -11,10 +11,10 @@
           <span class="nav_logo-name"><%= t ".dashboard" %></span>
         </a>
         <div class="nav_list">
-          <a href="#" class="nav_link active">
+          <%= link_to admin_movies_path, class: "nav_link active" do %>
             <i class="fa fa-film nav_icon"></i>
             <span class="nav_name"><%= t ".movies" %></span>
-          </a>
+          <% end %>
           <a href="#" class="nav_link">
             <i class="fa fa-users nav_icon"></i>
             <span class="nav_name"><%= t ".users" %></span>
@@ -25,7 +25,7 @@
           <% end %>
           <a href="#" class="nav_link">
             <i class='fa fa-ticket nav_icon'></i>
-            <span class="nav_name"><%= t ".tickets" %></span>
+            <span class="nav_name"><%= t ".shows" %></span>
           </a>
           <a href="#" class="nav_link">
             <i class='fa fa-credit-card nav_icon'></i>
@@ -36,4 +36,3 @@
       <a href="#" class="nav_link"> <i class='fa fa-sign-out'></i> <span class="nav_name"><% t ".signout" %></span> </a>
     </nav>
   </div>
-</body>

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       log_in user
       logged_in user
     else
-      flash.now[:danger] = t ".danger"
+      flash.now[:danger] = t "danger"
       render :new
     end
   end
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     if user.admin?
       redirect_to admin_root_path
     else
-      redirect_back_or root_path
+      redirect_to root_path
     end
   end
 end

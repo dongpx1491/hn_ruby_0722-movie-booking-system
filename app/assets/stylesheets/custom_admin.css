@@ -163,6 +163,7 @@ a {
 
 form {
   padding-left: 10px;
+  padding-bottom: 50px;
 }
 
 @media screen and (min-width: 768px) {
@@ -202,23 +203,21 @@ form {
 
 .fa-eye {
   padding-right: 10px;
-  color: #40ce26
+  color: #7036db
 }
 
 .fa-pencil {
   padding-right: 10px;
-  color: #e2f512
+  color: #7036db
 }
 
 .fa-trash {
-  padding-right: 10px;
   color: #f11717;
 }
 
 .new-genre {
   background-color: #fa4d4d;
   color: white;
-  /* padding: 20px; */
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -230,11 +229,11 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid #6b6a6a;
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.button {
+  margin-top: 20px;
 }
