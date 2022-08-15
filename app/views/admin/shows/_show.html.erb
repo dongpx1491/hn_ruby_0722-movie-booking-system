@@ -1,0 +1,18 @@
+<tr>
+  <th><%= show.id %></th>
+  <th><%= show.date %></th>
+  <th><%= show.movie_title %></th>
+  <th><%= show.room_name %></th>
+  <th><%= l(show.start_time, format: :short) %></th>
+  <th>
+    <%= link_to "#" do %>
+      <span class="fa fa-eye"></span>
+    <% end %>
+    <%= link_to edit_admin_show_path(show) do %>
+      <span class="fa fa-pencil"></span>
+    <% end %>
+    <%= link_to '#' do %>
+      <span class="fa fa-trash"></span>
+    <% end %>
+  </th>
+</tr>

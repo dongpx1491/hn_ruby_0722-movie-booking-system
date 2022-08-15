@@ -58,12 +58,20 @@ end
   end
 end
 
-3.times do
-  date = Faker::Date.between(from: "2022-07-23", to: "2021-09-25")
-  rd = rand(10..22)
-  start_time = "#{rd}:00:00"
-  Show.create!(date: date,
-              start_time: start_time,
-              movie_id: Movie.active.pluck(:id).sample,
-              room_id: Room.all.pluck(:id).sample)
-end
+# 20.times do
+#   date = Faker::Date.between(from: "2022-07-23", to: "2022-09-30")
+#   rd = rand(10..22)
+#   start_time = "#{rd}:00:00"
+#   Show.create!(date: date,
+#               start_time: start_time,
+#               movie_id: Movie.active.pluck(:id).sample,
+#               room_id: Room.all.pluck(:id).sample)
+# end
+
+Show.create!(date: "2022-08-23",
+            start_time: "20:20",
+            movie_id: Movie.active.pluck(:id).sample,
+            room_id: Room.all.pluck(:id).sample,
+            end_time: "22:00"
+)
+
