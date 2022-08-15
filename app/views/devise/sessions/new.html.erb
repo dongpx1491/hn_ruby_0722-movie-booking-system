@@ -5,7 +5,6 @@
       <div class="col-lg-12 text-center">
         <div class="normal__breadcrumb__text">
           <h2><%= t ".login" %></h2>
-          <p><%= t ".p" %></p>
         </div>
       </div>
     </div>
@@ -17,7 +16,7 @@
       <div class="col-lg-6">
         <div class="login__form">
           <h3><%= t ".login"%></h3>
-          <%= form_for :session, url: login_path do |f| %>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="input__item">
               <%= f.email_field :email, placeholder: t(".email") %>
               <span ><i class="fa-solid fa-envelope"></i></span>
@@ -26,21 +25,23 @@
               <%= f.password_field :password, placeholder: t(".password") %>
               <span class="icon_lock"></span>
             </div>
-            <div>
-              <%= f.label :remember_me, class: "checkbox inline" do %>
-                <%= f.check_box :remember_me %>
-                <span class="white_a"><%= t ".remember_me" %></span>
-              <% end %>
-            </div>
+            <% if devise_mapping.rememberable? %>
+              <div>
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                  <%= f.check_box :remember_me %>
+                  <span class="white_a"><%= t ".remember_me" %></span>
+                <% end %>
+              </div>
+            <% end %>
+            <%= render "devise/shared/links" %>
             <%= f.submit t(".login"), class: "site-btn" %>
           <% end %>
-          <%= link_to t(".forgot_password"), new_password_reset_path, class: "forget_pass" %>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="login__register">
           <h3><%= t ".new_user" %></h3>
-          <%= link_to t(".sign_up_now"), signup_path, class: "primary-btn" %>
+          <%= link_to t(".sign_up_now"), new_user_registration_path, class: "primary-btn" %>
         </div>
       </div>
     </div>
