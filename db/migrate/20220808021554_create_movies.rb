@@ -8,7 +8,8 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.string :language
       t.string :cast
       t.string :director
-      t.boolean :status
+      t.string :thumbnail
+      t.integer :status, default: 0
 
       t.references :genre, null: true, foreign_key: true
 

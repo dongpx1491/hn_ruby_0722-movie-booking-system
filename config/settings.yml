@@ -1,7 +1,7 @@
 user:
   valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   email:
-    min_length: 20
+    min_length: 5
     max_length: 50
   name:
     max_length: 50
