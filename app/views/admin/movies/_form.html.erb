@@ -1,7 +1,9 @@
 <%= form_for [:admin, @movie] do |f| %>
 
+  <%= render "shared/error_messages", object: f.object %>
+
   <%= f.label :title, t(".title") %>
-  <%= f.text_field :title, class: "form-control modal-", id: "input-label" %>
+  <%= f.text_field :title, class: "form-control", id: "input-label" %>
 
   <%= f.label :description, t(".description") %>
   <%= f.text_field :description, class: "form-control", id: "input-label" %>
@@ -16,13 +18,17 @@
   <%= f.text_field :language, class: "form-control", id: "input-label" %>
 
   <%= f.label :cast, t(".cast") %>
-  <%= f.text_field :cast, class: "form-00control", id: "input-label" %>
+  <%= f.text_field :cast, class: "form-control", id: "input-label" %>
 
   <%= f.label :director, t(".director") %>
   <%= f.text_field :director, class: "form-control", id: "input-label" %>
 
   <%= f.label :genre, t(".genre") %>
-  <%= collection_select(:movie, :genre_id, @genres, :id, :name, {}, {class: "form-control"} ) %>
+  <%= collection_select(:movie, :genre_id, @genres, :id, :name, {}, {class: "form-control", id: "input-label"} ) %>
+
+  <%= f.label :image, t("image") %>
+  <%= f.file_field :image,
+      {class: "form-control-file border", placeholder: t(".input_image")} %>
 
   <%= f.submit t(".submit"), class: "button btn btn-primary" %>
 <% end %>

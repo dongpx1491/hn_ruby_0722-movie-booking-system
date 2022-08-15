@@ -1,0 +1,6 @@
+<tr>
+  <td><%= payment.id %></td>
+  <td><%= payment.tickets.count %></td>
+  <td><%= l(payment.activated_at, format: :details) %></td>
+  <td><%= number_to_currency(payment.total) %></td>
+</tr>

@@ -1,0 +1,23 @@
+<% provide :title, t(".payment") %>
+
+<h1><%= t ".payment" %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t ".id" %></th>
+      <th><%= t ".user" %></th>
+      <th><%= t ".phone_number" %></th>
+      <th><%= t ".create_at" %></th>
+      <th><%= t ".status" %></th>
+      <th><%= t ".action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "payment", collection: @payments %>
+  </tbody>
+</table>
+
+<%== pagy_bootstrap_nav @pagy %>
+
+<div id="payment-content"></div>

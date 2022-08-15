@@ -1,4 +1,6 @@
 class Admin::AdminController < ApplicationController
+  include Admin::PaymentsHelper
+  include Admin::UsersHelper
   before_action :is_admin?
   layout "admin/layouts/application"
 

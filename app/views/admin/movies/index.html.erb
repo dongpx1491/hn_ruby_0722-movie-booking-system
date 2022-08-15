@@ -5,23 +5,22 @@
   <span class="fa fa-plus-circle circle"></span>
   <%= t ".create" %>
 <% end %>
-<table>
-  <thead>
-    <tr>
-      <th><%= t ".id" %></th>
-      <th><%= t ".movie" %></th>
-      <th><%= t ".release_date" %></th>
-      <th><%= t ".duration" %></th>
-      <th><%= t ".language" %></th>
-      <th><%= t ".cast" %></th>
-      <th><%= t ".director" %></th>
-      <th><%= t ".status" %></th>
-      <th><%= t ".action" %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render partial: "movie", collection: @movies %>
-  </tbody>
-</table>
 
+<div class="table-users">
+  <table cellspacing="0">
+    <thead>
+      <tr>
+        <th><%= t ".id" %></th>
+        <th><%= t ".movie" %></th>
+        <th><%= t ".poster" %></th>
+        <th><%= t ".language" %></th>
+        <th><%= t ".status" %></th>
+        <th><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "movie", collection: @movies %>
+    </tbody>
+  </table>
+</div>
 <%== pagy_bootstrap_nav @pagy %>

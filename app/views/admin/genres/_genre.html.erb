@@ -2,14 +2,14 @@
   <th><%= genre_counter + 1 %></th>
   <th><%= genre.name %></th>
   <th>
-    <%= link_to "#" do %>
+    <%= link_to "#", class: "show" do %>
       <span class="fa fa-eye"></span>
     <% end %>
-    <%= link_to edit_admin_genre_path(genre) do %>
+    <%= link_to edit_admin_genre_path(genre), class: "edit" do %>
       <span class="fa fa-pencil"></span>
     <% end %>
     <%= link_to admin_genre_path(genre), method: :delete,
-          data: { confirm: t(".confirm")} do %>
+          data: { confirm: t(".confirm")}, class: "delete" do %>
       <span class="fa fa-trash"></span>
     <% end %>
   </th>

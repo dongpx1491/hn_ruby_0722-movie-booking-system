@@ -1,5 +1,7 @@
 <%= form_for [:admin, @show] do |f| %>
 
+  <%= render "shared/error_messages", object: f.object %>
+
   <%= f.label :date, t(".date") %>
   <%= f.date_field :date, class: "form-control", id: "input-label" %>
 

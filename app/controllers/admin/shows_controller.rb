@@ -34,7 +34,9 @@ class Admin::ShowsController < Admin::AdminController
   end
 
   def destroy
-    if @show.destroy
+    if @show.tickets.any?
+      flash[:success] = t "show_delete_denied"
+    elsif @show.destroy
       flash[:success] = t "show_delete"
     else
       flash[:danger] = t "show_delete_failed"

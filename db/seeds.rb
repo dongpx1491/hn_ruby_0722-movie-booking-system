@@ -44,7 +44,7 @@ User.create!(
                director: director,
                status: status,
                genre_id: Genre.all.pluck(:id).sample)
-  end
+end
 
 3.times do |n|
   name = "Cinema #{n + 1}"
@@ -62,15 +62,15 @@ end
   end
 end
 
-# 20.times do
-#   date = Faker::Date.between(from: "2022-07-23", to: "2022-09-30")
-#   rd = rand(10..22)
-#   start_time = "#{rd}:00:00"
-#   Show.create!(date: date,
-#               start_time: start_time,
-#               movie_id: Movie.active.pluck(:id).sample,
-#               room_id: Room.all.pluck(:id).sample)
-# end
+5.times do
+  date = Faker::Date.between(from: "2022-07-23", to: "2022-09-30")
+  rd = rand(10..22)
+  start_time = "#{rd}:00:00"
+  Show.create!(date: date,
+              start_time: start_time,
+              movie_id: Movie.active.pluck(:id).sample,
+              room_id: Room.all.pluck(:id).sample)
+end
 
 Show.create!(date: "2022-08-23",
             start_time: "20:20",
@@ -78,3 +78,18 @@ Show.create!(date: "2022-08-23",
             room_id: Room.all.pluck(:id).sample,
             end_time: "22:00"
 )
+10.times do
+  name = Faker::Name.unique.name_with_middle
+  email = Faker::Internet.email(name: name)
+  date_of_birth = Faker::Date.between(from: "2001-07-23", to: "2002-09-30")
+  User.create!(
+    name: name,
+    email: email,
+    password: "password",
+    password_confirmation: "password",
+    date_of_birth: date_of_birth,
+    role: 0,
+    phone_number: '0931230911'
+  )
+end
+
