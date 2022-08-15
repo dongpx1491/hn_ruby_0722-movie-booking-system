@@ -1,5 +1,13 @@
 vi:
   movie_booking: Đặt vé xem phim
+  genre_update: "Cập nhật thể loại thành công"
+  genre_update_failed: "Cập nhật thất bại"
+  genre_delete: "Xóa thể loại thành công"
+  genre_delete_failed: "Xóa thất bại"
+  genre_create: "Tạo thể loại thành công"
+  genre_create_failed: "Tạo thất bại"
+  not_found: "Không tìm thấy"
+  delete_denied: "Không thể xóa do tìm thấy phim có liên kết với thể loại này"
   date:
     formats:
       own: "%d-%m-%Y"
@@ -7,6 +15,10 @@ vi:
     formats:
       own: "%H:%M:%Ss"
   movie: "Ứng dụng đặt vé xem phim"
+  static_pages:
+    home:
+      now_showing: "Đang công chiếu"
+      coming_soon: "Sắp công chiếu"
   layouts:
     application:
     header:
@@ -82,3 +94,26 @@ vi:
       or: "Hoặc"
     create:
       danger: "Tài khoản và Mật khẩu không hợp lệ"
+  admin:
+    genres:
+      form:
+        genre: "Thể loại"
+        submit: "Chấp nhận"
+      genre:
+        confirm: "Bạn có chắc chắn không?"
+      edit:
+        edit: "Chỉnh sửa thể loại"
+      index:
+        genre: "Thể loại"
+        create: "Tạo thể loại mới"
+        action: "Các hành động"
+      new:
+        create: "Tạo thể loại mới"
+    layouts:
+      dashboard: "Trang chủ"
+      movies: "Phim"
+      users: "Người dùng"
+      genres: "Thể loại"
+      tickets: "Vé"
+      revenue: "Doanh thu"
+      signout: "Đăng xuất"
