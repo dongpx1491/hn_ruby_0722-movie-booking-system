@@ -1,0 +1,5 @@
+<% if seat.ticket %>
+  <a class="taken">Was Taken</a>
+<% else %>
+  <%= link_to "#{seat.type_seat} #{seat.id}", tickets_path(ticket: {show_id: params[:id], seat_id: seat.id, payment_id: session[:payment_id]}, movie_id: params[:movie_id]), method: :post, data: { confirm: t(".confirm") } %>
+<% end %>

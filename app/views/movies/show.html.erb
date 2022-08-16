@@ -68,7 +68,9 @@
             <div class="anime__details__btn">
               <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> <%= t ".favorite" %></a>
               <% if @movie.active? %>
-                <a href="#" class="watch-btn"><span><%= t ".booking" %></span> <i class="fa fa-angle-right"></i></a>
+                <%= link_to movie_shows_path(@movie), class: "watch-btn" do %>
+                  <span><%= t ".booking" %></span> <i class="fa fa-angle-right"></i>
+                <% end %>
               <% else %>
                 <a class="watch-btn"><span><%= t ".comming" %></span> <i class="fa fa-angle-right"></i></a>
               <% end %>

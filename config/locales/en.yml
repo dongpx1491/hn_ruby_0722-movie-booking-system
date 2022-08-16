@@ -1,10 +1,15 @@
 en:
+  application:
+    danger: "Please log in"
+  movie_booking: Movie booking
   date:
     formats:
       own: "%d-%m-%Y"
   time:
     formats:
       own: "%H:%M:%Ss"
+      short: "%H:%M"
+  movie: "Movie Ticket App"
   layouts:
     application:
     header:
@@ -21,6 +26,22 @@ en:
       copyright: "Copyright"
       reserved: "All rights reserved | This template is made with"
       by: "by"
+  shows:
+    not_found: "Movie not found"
+    index:
+      shows_list: "Shows list"
+      shows: "Shows"
+    show:
+      seats_list: "Seats list:"
+      going: "Go to Payment"
+  tickets:
+    create:
+      success: "Add ticket success"
+      danger: "Cannot add ticket into payment"
+  static_pages:
+    home:
+      now_showing: "Now Showing"
+      coming_soon: "Coming soon"
   movies:
     not_found: "Movie not found"
     index:
@@ -29,7 +50,7 @@ en:
     show:
       details: "Details"
       home: "Home"
-      movies: "Movies"
+      movies: "Movie"
       release: "Release Date:"
       director: "Director:"
       cast: "Cast:"
@@ -39,7 +60,7 @@ en:
       duration: "Duration:"
       favorite: "Favorite"
       booking: "Booking Now"
-      coming: "Coming soon"
+      comming: "Coming soon"
       reviews: "Reviews"
       comments: "Your Comment"
       review: "Review"
@@ -48,6 +69,9 @@ en:
     error_messages:
       content: "The form contains"
       error: "error"
+    movie:
+      now_showing: "Now Showing"
+      coming_soon: "Coming Soon"
   users:
     new:
       sign_up: "Sign up"
@@ -80,3 +104,6 @@ en:
       or: "Or"
     create:
       danger: "invalid email password combination"
+  seats:
+    seat:
+      confirm: "Add tickets ?"

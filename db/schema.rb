@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_12_064649) do
+ActiveRecord::Schema.define(version: 2022_08_10_145000) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 2022_08_12_064649) do
   end
 
   create_table "payments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.decimal "total", precision: 10
-    t.boolean "status"
+    t.decimal "total", precision: 10, scale: 2, default: "0.0"
+    t.integer "status", default: 0
     t.bigint "user_id"
     t.bigint "discount_id"
     t.datetime "created_at", precision: 6, null: false
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2022_08_12_064649) do
   end
 
   create_table "seats", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "type"
+    t.integer "type_seat"
     t.decimal "price", precision: 10
     t.bigint "room_id"
     t.datetime "created_at", precision: 6, null: false
@@ -121,7 +121,6 @@ ActiveRecord::Schema.define(version: 2022_08_12_064649) do
   end
 
   create_table "tickets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.decimal "price", precision: 10
     t.bigint "show_id"
     t.bigint "payment_id"
     t.bigint "seat_id"
