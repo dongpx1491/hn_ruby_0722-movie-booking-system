@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    root "movies#index"
+    root "static_pages#home"
+    get "/movies", to: "movies#sort"
     get "/signup", to: "users#new"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :users
-    resources :movies, only: %i(show)
+    resources :movies, only: %i(index show)
   end
 end
