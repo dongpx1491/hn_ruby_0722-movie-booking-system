@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+Genre.create!([{name: 'Horror'}, {name: 'Comedy'}, {name: 'Action'}, {name: 'Adventure'}, {name: 'Fantasy'}])
+
+=======
 5.times do
   name = Faker::Book.unique.genre
   Genre.create! name: name
 end
+>>>>>>> 0b0f248 (Movies Details)
 
 User.create!(
   name: "Admin User",
@@ -43,4 +48,8 @@ User.create!(
                director: director,
                status: status,
                genre_id: Genre.all.pluck(:id).sample)
+<<<<<<< HEAD
+  end
+=======
 end
+>>>>>>> 0b0f248 (Movies Details)

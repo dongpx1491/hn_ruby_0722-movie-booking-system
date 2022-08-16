@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2022_08_10_145000) do
+=======
 ActiveRecord::Schema.define(version: 2022_08_12_064649) do
+>>>>>>> 0b0f248 (Movies Details)
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false

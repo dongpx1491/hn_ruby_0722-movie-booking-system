@@ -3,7 +3,22 @@ class MoviesController < ApplicationController
 
   def index; end
 
-  def show; end
+  def show
+    @movie = Movie.find_by id: params[:id]
+    return if @movie
+
+    flash[:warning] = "Movie not found"
+    redirect_to root_path
+  end
+
+  def sort
+    if params[:sort]
+      @movies = sort_by params[:sort]
+      respond_to :js
+    else
+      redirect_to root_path
+    end
+  end
 
   private
 
@@ -13,5 +28,14 @@ class MoviesController < ApplicationController
 
     flash[:warning] = t ".not_found"
     redirect_to root_path
+  end
+
+  def sort_by params
+    case params.to_sym
+    when :showing
+      Movie.active.limitation
+    when :coming
+      Movie.inactive.limitation
+    end
   end
 end
