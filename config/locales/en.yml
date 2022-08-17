@@ -2,6 +2,14 @@ en:
   application:
     danger: "Please log in"
   movie_booking: Movie booking
+  genre_update: "Genre updated"
+  genre_update_failed: "Update failed"
+  genre_delete: "Genre deleted"
+  genre_delete_failed: "Delete failed"
+  genre_create: "Genre create successfu"
+  genre_create_failed: "Create failed"
+  not_found: "Not found"
+  delete_denied: "Cannot delete because there were movies associated to this genre"
   date:
     formats:
       own: "%d-%m-%Y"
@@ -10,6 +18,10 @@ en:
       own: "%H:%M:%Ss"
       short: "%H:%M"
   movie: "Movie Ticket App"
+  static_pages:
+    home:
+      now_showing: "Now Showing"
+      coming_soon: "Coming Soon"
   layouts:
     application:
     header:
@@ -98,7 +110,7 @@ en:
       p: "Welcome to Movie Booking App."
       email: "Email"
       password: "Password"
-      new_user: "Dont’t Have An Account?"
+      new_user: "Don’t Have An Account?"
       sign_up_now: "Register now!"
       forgot_password: "Forgot Your Password?"
       or: "Or"
@@ -107,3 +119,27 @@ en:
   seats:
     seat:
       confirm: "Add tickets ?"
+  admin:
+    genres:
+      form:
+        genre: "Genre"
+        submit: "Submit"
+      genre:
+        confirm: "Are you sure?"
+      edit:
+        edit: "Edit genre"
+      index:
+        genre: "Genre"
+        create: "Create new genre"
+        action: "Action"
+      new:
+        create: "Create new genre"
+    layouts:
+      dashboard: "Dashboard"
+      movies: "Movies"
+      users: "Users"
+      genres: "Genres"
+      tickets: "Tickets"
+      revenue: "Revenue"
+      signout: "Sign Out"
+

@@ -1,0 +1,16 @@
+<tr>
+  <th><%= genre_counter + 1 %></th>
+  <th><%= genre.name %></th>
+  <th>
+    <%= link_to "#" do %>
+      <span class="fa fa-eye"></span>
+    <% end %>
+    <%= link_to edit_admin_genre_path(genre) do %>
+      <span class="fa fa-pencil"></span>
+    <% end %>
+    <%= link_to admin_genre_path(genre), method: :delete,
+          data: { confirm: t(".confirm")} do %>
+      <span class="fa fa-trash"></span>
+    <% end %>
+  </th>
+</tr>

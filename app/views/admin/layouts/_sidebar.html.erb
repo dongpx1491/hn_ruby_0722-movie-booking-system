@@ -1,0 +1,39 @@
+<body id="body-pd">
+  <header class="header" id="header">
+    <div class="header_toggle"> <i class="fa fa-bars" id="header-toggle"></i> </div>
+    <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+  </header>
+  <div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+      <div>
+        <a href="#" class="nav_logo">
+          <i class="fa fa-home"></i>
+          <span class="nav_logo-name"><%= t ".dashboard" %></span>
+        </a>
+        <div class="nav_list">
+          <a href="#" class="nav_link active">
+            <i class="fa fa-film nav_icon"></i>
+            <span class="nav_name"><%= t ".movies" %></span>
+          </a>
+          <a href="#" class="nav_link">
+            <i class="fa fa-users nav_icon"></i>
+            <span class="nav_name"><%= t ".users" %></span>
+          </a>
+          <%= link_to admin_genres_path, class: "nav_link" do %>
+            <i class='fa fa-clone nav_icon'></i>
+            <span class="nav_name"><%= t ".genres" %></span>
+          <% end %>
+          <a href="#" class="nav_link">
+            <i class='fa fa-ticket nav_icon'></i>
+            <span class="nav_name"><%= t ".tickets" %></span>
+          </a>
+          <a href="#" class="nav_link">
+            <i class='fa fa-credit-card nav_icon'></i>
+            <span class="nav_name"><%= t ".revenue" %></span>
+          </a>
+        </div>
+      </div>
+      <a href="#" class="nav_link"> <i class='fa fa-sign-out'></i> <span class="nav_name"><% t ".signout" %></span> </a>
+    </nav>
+  </div>
+</body>
