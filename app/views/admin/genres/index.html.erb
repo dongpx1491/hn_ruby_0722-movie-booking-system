@@ -1,0 +1,14 @@
+<% provide :title, t(".genre") %>
+<h1><%= t ".genre" %></h1>
+<%= link_to new_admin_genre_path, class: "new-genre" do %>
+  <span class="fa fa-plus-circle circle"></span>
+  <%= t ".create" %>
+<% end %>
+<table>
+  <tr>
+    <th>STT</th>
+    <th><%= t ".genre" %></th>
+    <th><%= t ".action" %></th>
+  </tr>
+  <%= render partial: "genre", collection: @genres %>
+</table>

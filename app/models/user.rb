@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
-  enum role: {not_admin: 0, admin: 1}
+  enum role: {customer: 0, admin: 1}
   has_many :ratings, dependent: :destroy
   has_many :user_discounts, dependent: :destroy
   has_many :discounts, through: :user_discounts, dependent: :destroy

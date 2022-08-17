@@ -9,5 +9,8 @@ user:
     min_length: 6
   phone_number:
     length: 10
-  model:
-    limitation: 6
+model:
+  limitation: 6
+genre:
+  name:
+    max_length: 50
