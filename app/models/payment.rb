@@ -1,5 +1,4 @@
 class Payment < ApplicationRecord
-  enum status: {cancel: 0, finished: 1}
+  enum status: {inactive: 0, active: 1}
   has_many :tickets, dependent: :destroy
-  belongs_to :discount
 end

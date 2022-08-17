@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     if user.admin?
       redirect_to admin_root_path
     else
-      redirect_to root_path
+      redirect_back_or root_path
     end
   end
 end

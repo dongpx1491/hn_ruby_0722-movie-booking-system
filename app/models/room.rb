@@ -1,4 +1,4 @@
 class Room < ApplicationRecord
-  belongs_to :show
   has_many :seats, dependent: :destroy
+  has_many :shows, dependent: :destroy
 end

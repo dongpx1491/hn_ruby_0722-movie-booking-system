@@ -1,0 +1,12 @@
+<div class="col-lg-3 col-md-3 col-sm-3">
+  <% if show.movie.image.attached? %>
+    <div class="blog__item small__item set-bg" style="background-image: url(<%= url_for show.movie.image %>);">
+  <% else %>
+    <div class="blog__item small__item border_show set-bg" style="background-image: url(<%= show.movie.thumbnail %>);">
+  <% end %>
+    <div class="blog__item__text">
+      <p class="p_show"><span class="icon_calendar"></span><%= l(show.date, format: :own) %></p>
+      <h4><%= link_to l(show.start_time, format: :short), [show.movie, show], class: "a_border" %></h4>
+    </div>
+  </div>
+</div>
