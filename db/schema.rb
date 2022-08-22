@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_19_074756) do
+ActiveRecord::Schema.define(version: 2022_08_22_024219) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2022_08_19_074756) do
     t.string "title"
     t.text "description"
     t.date "release_date"
-    t.time "duration"
+    t.integer "duration"
     t.string "language"
     t.string "cast"
     t.string "director"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2022_08_19_074756) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["genre_id"], name: "index_movies_on_genre_id"
+    t.index ["title"], name: "index_movies_on_title", unique: true
   end
 
   create_table "payments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

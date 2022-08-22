@@ -20,7 +20,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find_by id: params[:id]
     return if @movie
 
-    flash[:warning] = t ".not_found"
+    flash[:warning] = t "not_found"
     redirect_to root_path
   end
 

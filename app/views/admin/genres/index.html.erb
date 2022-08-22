@@ -10,5 +10,7 @@
     <th><%= t ".genre" %></th>
     <th><%= t ".action" %></th>
   </tr>
-  <%= render partial: "genre", collection: @genres %>
+  <tbody>
+    <%= render @genres %>
+  </tbody>
 </table>
