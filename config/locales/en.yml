@@ -23,8 +23,17 @@ en:
       own: "%d-%m-%Y"
   time:
     formats:
+      details: "%d %b %Y, %H:%M:%S"
       own: "%H:%M:%Ss"
       short: "%H:%M"
+  number:
+     currency:
+        format:
+          unit: "$"
+          delimiter: ","
+          separator: "."
+          precision: 0
+          format: "%n%u"
   movie: "Movie Ticket App"
   static_pages:
     home:
@@ -42,6 +51,7 @@ en:
       member: "Member"
       edit: "Edit users"
       log_out: "Log out"
+      orders_history: "Orders History"
     footer:
       copyright: "Copyright"
       reserved: "All rights reserved | This template is made with"
@@ -50,14 +60,27 @@ en:
     not_found: "Movie not found"
     index:
       shows_list: "Shows list"
+      movies: "movie"
       shows: "Shows"
     show:
       seats_list: "Seats list:"
       going: "Go to Payment"
+      movies: "movie"
+      shows: "Shows"
+      seats: "Seats"
   tickets:
+    not_found: "Tickets not found"
     create:
       success: "Add ticket success"
       danger: "Cannot add ticket into payment"
+    destroy:
+      success: "Delete ticket success"
+      danger: "Cannot delete ticket from your payment"
+    ticket:
+      price: "Price:"
+      seat: "Seat name:"
+      delete: "Delete"
+      confirm: "Confirm"
   static_pages:
     home:
       now_showing: "Now Showing"
@@ -92,6 +115,50 @@ en:
     movie:
       now_showing: "Now Showing"
       coming_soon: "Coming Soon"
+  payment_activations:
+    not_found: "Cannot found your payment"
+    edit:
+      success: "Your payment has been successfully activated"
+      danger: "Cannot active your payment"
+  payments:
+    danger: "Your payment has been expired"
+    not_found: "Cannot found your payment"
+    activation:
+      info: "check your email to active your payment"
+    destroy:
+      success: "Your Order has been successfully destroyed"
+      danger: "There was an error for deleting the Order."
+    payment:
+      details: "Detail"
+    non_payment:
+      h2: "Opps..."
+      p: "You dont have any order"
+    show:
+      h5: Your order
+      total: "Total:"
+      cancel: "Cancel"
+      buy: "Buy now"
+      confirm: "Confirm"
+  payment_mailer:
+    payment_activation:
+      subject: "Confirm the payment"
+      h1: "Confirm the Payment"
+      hi: "Hi "
+      link: ", click the link below to confirm your payment: "
+      confirm: "Confirm your payment"
+  order_historys:
+    index:
+      h5: "Your order History"
+      payment_id: "Payment id"
+      numbers: "Number of tickets"
+      completed: "Completed at"
+      total: "Total"
+      details: "Details"
+      info: "You dont have any payments"
+    show:
+      h5: "Your order"
+      total: "Total:"
+      danger: "Cannot find payments"
   users:
     new:
       sign_up: "Sign up"

@@ -1,0 +1,23 @@
+<div class="product__sidebar__comment__item ticket_border">
+  <div class="product__sidebar__comment__item__pic">
+    <% if ticket.show_movie.image.attached? %>
+      <%= image_tag(ticket.show_movie.image, class: "img_payment") %>
+    <% else %>
+      <%= image_tag(ticket.show_movie.thumbnail, class: "img_payment") %>
+    <% end %>
+  </div>
+  <div class="product__sidebar__comment__item__text">
+    <ul>
+      <li class="xsize"><%= t ".price" %> <%= ticket.seat_price %></li>
+      <li class="xsize"><%= t ".seat" %> <%= "#{ticket.seat_type_seat} #{ticket.seat_id}" %></li>
+      <% unless ticket.payment.active? %>
+        <li class="xsize delete"><%= link_to t(".delete"), ticket, method: :delete,
+          remote: true, data: {confirm: t(".confirm")}, class: "delete_a" %></li>
+      <% end %>
+    </ul>
+    <h3 class="title_h3"><%= ticket.show_movie.title %></h3>
+    <span class="xsize_100px"><i class="fa-solid fa-calendar-days"></i>  <%= ticket.show_date %></span>
+    <span class="span_cinema time_size"><i class="fa-solid fa-clock"></i> <%= l(ticket.show_start_time, format: :short)%></span>
+    <span class="span_cinema"><i class="fa-solid fa-clapperboard"></i> <%= ticket.show_room.name %></span>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="section-title">
+  <h5><%= t ".h5" %></h5>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped b-t b-light">
+    <thead>
+      <tr>
+        <th><%= t ".payment_id" %></th>
+        <th><%= t ".numbers" %></th>
+        <th><%= t ".completed" %></th>
+        <th><%= t ".total" %></th>
+        <th><%= t ".details" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @payments %>
+    </tbody>
+  </table>
+  <% if @payments.present? %>
+    <%== pagy_bootstrap_nav(@pagy) %>
+  <% end %>
+</div>

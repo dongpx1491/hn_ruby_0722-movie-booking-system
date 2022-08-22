@@ -14,7 +14,7 @@
               <li><a href="#"><%= t ".booking" %></a></li>
               <li><a href="#"><%= t ".blog" %></a></li>
               <li><a href="#"><%= t ".contact" %></a></li>
-              <li><a href="#"><%= t ".member" %></a></li>
+              <li><%= link_to t(".orders_history"), order_historys_path %></li>
             </ul>
           </nav>
         </div>
@@ -26,6 +26,13 @@
               <a href="#" class="search-switch"><i class="fa fa-search" aria-hidden="true"></i></a>
             </li>
             <% if logged_in? %>
+              <% if have_payment? %>
+                <li>
+                  <%= link_to payment_path(current_payment) do %>
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                  <% end%>
+                </li>
+              <% end %>
               <li>
                 <a><i class="fa-solid fa-user"></i></a>
                 <ul class="dropdown">

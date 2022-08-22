@@ -23,8 +23,17 @@ vi:
       own: "%d-%m-%Y"
   time:
     formats:
+      details: "%d %b %Y, %H:%M:%S"
       own: "%H:%M:%Ss"
       short: "%H:%M"
+  number:
+     currency:
+        format:
+          unit: "VND"
+          delimiter: ","
+          separator: "."
+          precision: 0
+          format: "%n,000%u"
   movie: "Ứng dụng đặt vé xem phim"
   static_pages:
     home:
@@ -42,6 +51,7 @@ vi:
       member: "Thành viên"
       edit: "Sửa thông tin"
       log_out: "Đăng xuất"
+      orders_history: "Lịch sử  thanh toán"
     footer:
       copyright: "Bản quyền"
       reserved: "Đã đăng ký bản quyền | Mẫu này được làm bằng"
@@ -50,14 +60,27 @@ vi:
     not_found: "Không tìm thấy phim"
     index:
       shows_list: "Danh sách suất chiếu"
+      movies: "phim"
       shows: "Suất chiếu"
     show:
       seats_list: "Danh sách ghế:"
       going: "Đi tới thanh toán"
+      movies: "phim"
+      shows: "suất chiếu"
+      seats: "ghế ngồi"
   tickets:
+    not_found: "Không tìm thấy ticket"
     create:
       success: "Thêm vé vào giỏ hàng thành công"
       danger: "Không thể thêm vé vào giỏ hàng"
+    destroy:
+      success: "Xóa ticket thành công"
+      danger: "Không thể xóa ticket khỏi đơn hàng của bạn"
+    ticket:
+      price: "Giá:"
+      seat: "Ghế ngồi:"
+      delete: "Xóa"
+      confirm: "Xác nhận"
   static_pages:
     home:
       now_showing: "Đang công chiếu"
@@ -89,6 +112,53 @@ vi:
     error_messages:
       content: "Biểu mẫu chứa"
       error: "Lỗi"
+    movie:
+      now_showing: "Đang công chiếu"
+      coming_soon: "Sắp khởi chiếu"
+  payment_activations:
+    not_found: "Không tìm thấy đơn hàng của bạn"
+    edit:
+      success: "Đơn hàng của bạn đã được thanh toán thành công"
+      danger: "Không thể thanh toán đơn hàngc của bạn"
+  payments:
+    danger: "Your payment has been expired"
+    not_found: "Không tìm thấy đơn hàng của bạn"
+    activation:
+      info: "Kiểm tra email của bạn để thực hiện thanh toán"
+    destroy:
+      success: "Đơn hàng của bạn đã được hủy thành công"
+      danger: "Có lỗi xảy ra khi hủy đơn hàng."
+    payment:
+      details: "Chi tiết"
+    non_payment:
+      h2: "Opps..."
+      p: "Bạn chưa có đơn hàng nào"
+    show:
+      h5: Đơn hàng của bạn
+      total: "Tổng tiền:"
+      cancel: "Hủy đơn hàng"
+      buy: "Thanh toán"
+      confirm: "Xác nhận"
+  payment_mailer:
+    payment_activation:
+      subject: "Xác nhận thanh toán"
+      h1: "Xác nhận thanh toán"
+      hi: "xin chào "
+      link: ", click vào đường link dưới đây để thực hiện thanh toán: "
+      confirm: "Xác nhận thanh toán"
+  order_historys:
+    index:
+      h5: "Lịch sử hóa đơn"
+      payment_id: "Mã Hóa đơn"
+      numbers: "Số lượng tickets"
+      completed: "Thanh toán lúc"
+      total: "Tổng tiền"
+      details: "Chi tiết"
+      info: "Bạn chưa có đơn hàng nào"
+    show:
+      h5: "Đơn hàng của bạn"
+      total: "Tổng tiền:"
+      danger: "Không tìm thấy đơn hàng này"
   users:
     new:
       sign_up: "Đăng kí"
@@ -123,7 +193,7 @@ vi:
       danger: "Tài khoản và Mật khẩu không hợp lệ"
   seats:
     seat:
-      was_taken: "Đã được đặt"
+      was_taken: "Hết"
       confirm: "Thêm vé ?"
   admin:
     genres:

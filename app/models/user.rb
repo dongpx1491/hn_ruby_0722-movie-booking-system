@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :user_discounts, dependent: :destroy
   has_many :discounts, through: :user_discounts, dependent: :destroy
+  has_many :payments, dependent: :destroy
 
   validates :email, presence: true,
             length: {minium: Settings.user.email.min_length,
