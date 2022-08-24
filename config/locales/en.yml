@@ -17,6 +17,7 @@ en:
   movie_create: "Movie create successfully"
   movie_create_failed: "Create failed"
   movie_delete_denied: "Cannot delete because there were shows associated to this movie"
+  overlap: "Times overlap another showtime on this screen"
   date:
     formats:
       own: "%d-%m-%Y"

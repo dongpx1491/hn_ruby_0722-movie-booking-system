@@ -1,0 +1,16 @@
+<%= form_for [:admin, @show] do |f| %>
+
+  <%= f.label :date, t(".date") %>
+  <%= f.date_field :date, class: "form-control", id: "input-label" %>
+
+  <%= f.label :movie, t(".movie") %>
+  <%= collection_select(:show, :movie_id, @movies, :id, :title, {}, {class: "form-control"} ) %>
+
+  <%= f.label :room, t(".room") %>
+  <%= collection_select(:show, :room_id, @rooms, :id, :name, {}, {class: "form-control"} ) %>
+
+  <%= f.label :start_time, t(".start_time") %>
+  <%= f.time_field :start_time, class: "form-control", id: "input-label" %>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

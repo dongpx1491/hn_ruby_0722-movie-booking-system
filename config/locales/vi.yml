@@ -17,6 +17,7 @@ vi:
   movie_create: "Tạo phim thành công"
   movie_create_failed: "Tạo thất bại"
   movie_delete_denied: "Không thể xóa do tìm thấy suất chiếu có liên kết với phim này"
+  overlap: "Đang có phim được chiếu trong cùng khung giờ"
   date:
     formats:
       own: "%d-%m-%Y"

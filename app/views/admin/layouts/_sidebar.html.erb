@@ -23,10 +23,10 @@
             <i class='fa fa-clone nav_icon'></i>
             <span class="nav_name"><%= t ".genres" %></span>
           <% end %>
-          <a href="#" class="nav_link">
+          <%= link_to admin_shows_path, class: "nav_link" do %>
             <i class='fa fa-ticket nav_icon'></i>
             <span class="nav_name"><%= t ".shows" %></span>
-          </a>
+          <% end %>
           <a href="#" class="nav_link">
             <i class='fa fa-credit-card nav_icon'></i>
             <span class="nav_name"><%= t ".revenue" %></span>
