@@ -1,0 +1,7 @@
+<tr>
+  <td><%= payment.id %></td>
+  <td><%= payment.tickets.count %></td>
+  <td><%= l(payment.activated_at, format: :details) %></td>
+  <td><%= number_to_currency(payment.total) %></td>
+  <td><%= link_to t(".details"), order_history_path(payment), class: "a_details" %></td>
+</tr>

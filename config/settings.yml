@@ -20,3 +20,5 @@ movie:
     max_length: 50
   content:
     max_length: 1000
+payment:
+  expired: 2

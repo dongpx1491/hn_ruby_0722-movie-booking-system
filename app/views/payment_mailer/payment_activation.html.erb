@@ -1,0 +1,6 @@
+<h1><%= t ".h1" %></h1>
+
+<p>
+   <%= t ".hi" %><%= @user.name %><%= t ".link" %>
+</p>
+<%= link_to t(".confirm"), edit_payment_activation_url(id: @payment.activation_token, payment_id: @payment.id) %>

@@ -16,8 +16,13 @@ module PaymentsHelper
     @current_payment = nil
   end
 
-  def total_price ticket
+  def add_total_price ticket
     total = current_payment.total + ticket.seat.price
+    current_payment.update_attribute(:total, total)
+  end
+
+  def minus_total_price ticket
+    total = current_payment.total - ticket.seat.price
     current_payment.update_attribute(:total, total)
   end
 end

@@ -162,6 +162,31 @@
             border-radius: 0 4px 4px 0;
         }
     }
+
+        .pay-btn {
+
+            span {
+                font-size: 13px;
+                color: $white-color;
+                background: #5de05d;
+                display: inline-block;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                padding: 14px 20px;
+                border-radius: 4px 0 0 4px;
+                margin-right: 1px;
+            }
+
+            i {
+                font-size: 20px;
+                display: inline-block;
+                background: #5de05d;
+                padding: 11px 5px 16px 8px;
+                color: $white-color;
+                border-radius: 0 4px 4px 0;
+            }
+        }
 }
 
 .anime__details__review {

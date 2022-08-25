@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2022_08_23_032405) do
     t.string "title"
     t.text "description"
     t.date "release_date"
-    t.integer "duration"
+    t.time "duration"
     t.string "language"
     t.string "cast"
     t.string "director"
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 2022_08_23_032405) do
     t.bigint "discount_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activation_digest"
+    t.datetime "activated_at"
     t.index ["discount_id"], name: "index_payments_on_discount_id"
     t.index ["user_id"], name: "index_payments_on_user_id"
   end

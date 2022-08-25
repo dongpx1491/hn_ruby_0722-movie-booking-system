@@ -1,0 +1,22 @@
+<div class="product__sidebar__comment">
+  <div class="section-title">
+    <h5><%= t ".h5" %></h5>
+  </div>
+  <div class="row">
+    <div class="col" id="ticket_order">
+      <%= render @tickets %>
+    </div>
+    <div class="col">
+      <div class="container">
+        <div class="row total">
+          <div class="col">
+            <h2 id="total_payment"><%= t ".total" %></h2>
+          </div>
+          <div class="col">
+            <p id="payment"><%= number_to_currency(@payment.total) %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,122 @@
 @import 'variable';
 @import 'mixins';
 
+.main_content {
+    min-height: 600px !important;
+}
+
+.title_h3 {
+    color: white !important;
+}
+
+.xsize {
+    font-size: 15px !important;
+}
+
+.time_size {
+    padding-left: 15px !important;
+    display: inline !important;
+    font-size: 20px !important;
+    color: aqua !important;
+}
+
+.xsize_100px {
+    display: inline !important;
+    font-size: 20px !important;
+    color: aqua !important;
+}
+
+.img_payment {
+    width: 80px !important;
+    height: 120px !important;
+}
+
+.ticket_red {
+    color: aqua !important;
+}
+
+.delete {
+    background-color: #ff4343 !important;
+}
+
+.delete_a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.total {
+    min-height: 300px;
+}
+
+#total_payment {
+    color: #ff4343;
+    font-size: 50px;
+    font-weight: bolder;
+    padding-top: 75px;
+    margin-left: 30px;
+}
+
+#payment {
+    color: white;
+    font-size: 50px;
+    padding-top: 90px;
+}
+
+.ticket_border {
+    width: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 5px solid red !important;
+}
+
+.green_button {
+    background-color: rgb(84, 218, 66) !important
+}
+
+table {
+    border: 1px solid white !important;
+
+    thead {
+        label {
+            margin-bottom: 0px !important;
+        }
+
+        background-color: rgb(221, 79, 79) !important;
+
+        th {
+            text-align: center;
+            color: white;
+        }
+    }
+
+    tbody {
+        background-color: antiquewhite;
+
+        td {
+            text-align: center;
+            color: rgb(221, 79, 79) !important;
+
+        }
+    }
+
+}
+
+.anime__details__episodes {
+    a {
+        text-align: center;
+        width: 120px;
+    }
+}
+
+.anime__video__player {
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.go-btn {
+    width: auto;
+    padding-top: 30px !important;
+}
 
 .login {
     padding-top: 130px;
@@ -99,6 +215,11 @@
 
     .primary-btn {
         background: $primary-color;
+        padding: 12px 42px;
+    }
+
+    .green-btn {
+        background: rgb(84, 218, 66) !important;
         padding: 12px 42px;
     }
 }
