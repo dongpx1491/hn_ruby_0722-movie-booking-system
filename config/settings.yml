@@ -21,4 +21,4 @@ movie:
   content:
     max_length: 1000
 payment:
-  expired: 2
+  expired: 15

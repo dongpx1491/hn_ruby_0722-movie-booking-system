@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get "/activation", to: "payments#activation"
     resources :tickets
     resources :users
+    resources :genres, only: :show
     resources :payments
     resources :order_historys
     resources :payment_activations, only: :edit

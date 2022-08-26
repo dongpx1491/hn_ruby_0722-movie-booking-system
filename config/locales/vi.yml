@@ -35,10 +35,6 @@ vi:
           precision: 0
           format: "%n,000%u"
   movie: "Ứng dụng đặt vé xem phim"
-  static_pages:
-    home:
-      now_showing: "Đang công chiếu"
-      coming_soon: "Sắp công chiếu"
   layouts:
     application:
     header:
@@ -52,6 +48,7 @@ vi:
       edit: "Sửa thông tin"
       log_out: "Đăng xuất"
       orders_history: "Lịch sử  thanh toán"
+      searching: "Tìm kiếm....."
     footer:
       copyright: "Bản quyền"
       reserved: "Đã đăng ký bản quyền | Mẫu này được làm bằng"
@@ -68,6 +65,8 @@ vi:
       movies: "phim"
       shows: "suất chiếu"
       seats: "ghế ngồi"
+  genres:
+    not_found: "Không tìm thấy thể loại"
   tickets:
     not_found: "Không tìm thấy ticket"
     create:
@@ -85,6 +84,8 @@ vi:
     home:
       now_showing: "Đang công chiếu"
       coming_soon: "Sắp khởi chiếu"
+      all: "Tất cả"
+      genre: "Thể loại"
   movies:
     not_found: "Không tìm thấy phim"
     index:

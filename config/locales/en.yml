@@ -35,10 +35,6 @@ en:
           precision: 0
           format: "%n%u"
   movie: "Movie Ticket App"
-  static_pages:
-    home:
-      now_showing: "Now Showing"
-      coming_soon: "Coming Soon"
   layouts:
     application:
     header:
@@ -52,6 +48,7 @@ en:
       edit: "Edit users"
       log_out: "Log out"
       orders_history: "Orders History"
+      searching: "Search here....."
     footer:
       copyright: "Copyright"
       reserved: "All rights reserved | This template is made with"
@@ -68,6 +65,8 @@ en:
       movies: "movie"
       shows: "Shows"
       seats: "Seats"
+  genres:
+    not_found: "Cannot found genres"
   tickets:
     not_found: "Tickets not found"
     create:
@@ -85,6 +84,8 @@ en:
     home:
       now_showing: "Now Showing"
       coming_soon: "Coming soon"
+      all: "View All"
+      genre: "Genre"
   movies:
     not_found: "Movie not found"
     index:
