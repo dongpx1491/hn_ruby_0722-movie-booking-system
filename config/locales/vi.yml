@@ -1,6 +1,6 @@
 vi:
   application:
-    danger: "Vui lòng đăng nhập"
+  danger: "Vui lòng đăng nhập"
   movie_booking: Đặt vé xem phim
   genre_update: "Cập nhật thể loại thành công"
   genre_update_failed: "Cập nhật thất bại"
@@ -27,13 +27,13 @@ vi:
       own: "%H:%M:%Ss"
       short: "%H:%M"
   number:
-     currency:
-        format:
-          unit: "VND"
-          delimiter: ","
-          separator: "."
-          precision: 0
-          format: "%n,000%u"
+    currency:
+      format:
+        unit: "VND"
+        delimiter: ","
+        separator: "."
+        precision: 0
+        format: "%n,000%u"
   movie: "Ứng dụng đặt vé xem phim"
   layouts:
     application:

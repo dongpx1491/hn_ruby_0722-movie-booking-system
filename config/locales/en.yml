@@ -1,6 +1,6 @@
 en:
   application:
-    danger: "Please log in"
+  danger: "Please log in"
   movie_booking: Movie booking
   genre_update: "Genre updated"
   genre_update_failed: "Update failed"
