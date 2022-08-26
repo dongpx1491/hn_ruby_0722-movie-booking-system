@@ -101,7 +101,79 @@ table {
 
         }
     }
+}
 
+.hover_a:hover .searching {
+    display: block !important;
+    position: relative;
+}
+
+.searching {
+    display: none !important;
+
+    .search-model-form {
+        position: absolute;
+        left: -180px;
+
+        input {
+            margin-top: 10px;
+            font-size: 20px;
+            width: 220px;
+            background-color: #515e7741;
+        }
+    }
+}
+
+.product__item__pic .ep1 {
+    font-size: 13px;
+    color: #ffffff;
+    background: #e53637;
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 4px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.primary-btn1 {
+    display: inline-block;
+    font-size: 20px !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #afafaf;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.tab__button1 {
+    margin-top: 10px;
+    line-height: 28px !important;
+}
+
+.tab__button {
+    line-height: 28px !important;
+}
+
+.section-title {
+    h4.left_height {
+        &:after {
+            height: 60px !important;
+        }
+    }
+
+}
+
+.ban {
+    cursor: not-allowed !important;
+}
+
+.center_h5 {
+    position: absolute;
+    left: 120px !important;
+    bottom: 80px !important;
+    width: 100%;
+    padding: 0 30px 0 20px;
 }
 
 .anime__details__episodes {

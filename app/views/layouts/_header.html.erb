@@ -23,7 +23,13 @@
         <div class="header__right">
           <ul>
             <li>
-              <a href="#" class="search-switch"><i class="fa fa-search" aria-hidden="true"></i></a>
+              <a class="search-switch hover_a"><i class="fa fa-search" aria-hidden="true"></i>
+                <div class="searching">
+                  <%= form_tag root_path, class: "search-model-form", method: :GET do %>
+                    <%= text_field_tag :search, params[:search], placeholder: t(".searching"), id: "search-input" %>
+                  <% end %>
+                </div>
+              </a>
             </li>
             <% if logged_in? %>
               <% if have_payment? %>

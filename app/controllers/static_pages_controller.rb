@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @movies = Movie.active.limitation
+    @pagy, @movies = pagy Movie.search params[:search]
+    @genres = Genre.asc_genre_name
   end
 end
