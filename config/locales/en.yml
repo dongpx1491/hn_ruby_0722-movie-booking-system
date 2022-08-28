@@ -1,6 +1,6 @@
 en:
   application:
-    danger: "Please log in"
+  danger: "Please log in"
   movie_booking: Movie booking
   genre_update: "Genre updated"
   genre_update_failed: "Update failed"
@@ -45,7 +45,7 @@ en:
       blog: "Cinema Blog"
       contact: "Contacts"
       member: "Member"
-      edit: "Edit users"
+      edit: "Edit user"
       log_out: "Log out"
       orders_history: "Orders History"
       searching: "Search here....."
@@ -161,15 +161,11 @@ en:
       total: "Total:"
       danger: "Cannot find payments"
   users:
+    warning: "Not found user"
+    danger: "Not correct user"
     new:
       sign_up: "Sign up"
       p: "Welcome to Movie Booking App."
-      email: "Email address"
-      name: "Your name"
-      password: "Password"
-      password_confirmation: "Password confirmation"
-      date_of_birth: "Your date of birth"
-      phone_number: "Your phone number"
       submit: "Sign up"
       have_account: "Already have an account?"
       log_in: "Log in!"
@@ -180,6 +176,20 @@ en:
     create:
       success: "Welcome to the Movie Booking App!"
       danger: "Fail to create account"
+    edit:
+      h2: "Edit User"
+      p: "Update your information"
+      submit: "Update profile"
+    update:
+      success: "Update your information successfully!"
+      danger: "Fail to update your information!"
+    user_form:
+      email: "Email address"
+      name: "Your name"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      date_of_birth: "Your date of birth"
+      phone_number: "Your phone number"
   sessions:
     new:
       login: "Log in"
@@ -190,6 +200,7 @@ en:
       sign_up_now: "Register now!"
       forgot_password: "Forgot Your Password?"
       or: "Or"
+      remember_me: "Remember me on this computer"
     create:
       danger: "invalid email password combination"
   seats:

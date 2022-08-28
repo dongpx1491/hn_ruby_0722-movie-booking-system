@@ -1,6 +1,6 @@
 vi:
   application:
-    danger: "Vui lòng đăng nhập"
+  danger: "Vui lòng đăng nhập"
   movie_booking: Đặt vé xem phim
   genre_update: "Cập nhật thể loại thành công"
   genre_update_failed: "Cập nhật thất bại"
@@ -27,13 +27,13 @@ vi:
       own: "%H:%M:%Ss"
       short: "%H:%M"
   number:
-     currency:
-        format:
-          unit: "VND"
-          delimiter: ","
-          separator: "."
-          precision: 0
-          format: "%n,000%u"
+    currency:
+      format:
+        unit: "$"
+        delimiter: ","
+        separator: "."
+        precision: 0
+        format: "%n%u"
   movie: "Ứng dụng đặt vé xem phim"
   layouts:
     application:
@@ -161,15 +161,11 @@ vi:
       total: "Tổng tiền:"
       danger: "Không tìm thấy đơn hàng này"
   users:
+    warning: "Không tìm thấy tài khoản"
+    danger: "Sai người dùng"
     new:
       sign_up: "Đăng kí"
       p: "Chào mừng bạn tới Movie Booking App."
-      email: "Địa chỉ Email"
-      name: "Tên của bạn"
-      password: "Mật khẩu"
-      password_confirmation: "Xác nhận mật khẩu"
-      date_of_birth: "Ngày sinh"
-      phone_number: "Số điện thoại"
       submit: "Đăng kí"
       have_account: "Bạn đã có tài khoản?"
       log_in: "Đăng nhập!"
@@ -180,6 +176,20 @@ vi:
     create:
       success: "Chào mừng bạn tới Movie Booking App!"
       danger: "Tạo tài khoản thất bại"
+    edit:
+      h2: "Sửa thông tin"
+      p: "Cập nhật thông tin của bạn"
+      submit: "Cập nhật thông tin"
+    update:
+      success: "Cập nhật thông tin thành công!"
+      danger: "Cập nhật thông tin thất bại!"
+    user_form:
+      email: "Địa chỉ Email"
+      name: "Tên của bạn"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      date_of_birth: "Ngày sinh"
+      phone_number: "Số điện thoại"
   sessions:
     new:
       login: "Đăng nhập"
@@ -190,6 +200,7 @@ vi:
       sign_up_now: "Đăng kí ngay !"
       forgot_password: "Quên mật khẩu ?"
       or: "Hoặc"
+      remember_me: "Ghi nhớ tài khoản của tôi"
     create:
       danger: "Tài khoản và Mật khẩu không hợp lệ"
   seats:
