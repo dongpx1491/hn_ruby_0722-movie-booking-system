@@ -26,6 +26,12 @@
               <%= f.password_field :password, placeholder: t(".password") %>
               <span class="icon_lock"></span>
             </div>
+            <div>
+              <%= f.label :remember_me, class: "checkbox inline" do %>
+                <%= f.check_box :remember_me %>
+                <span class="white_a"><%= t ".remember_me" %></span>
+              <% end %>
+            </div>
             <%= f.submit t(".login"), class: "site-btn" %>
           <% end %>
           <%= link_to t(".forgot_password"), "#", class: "forget_pass" %>

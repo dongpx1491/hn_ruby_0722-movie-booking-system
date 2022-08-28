@@ -176,6 +176,20 @@ table {
     padding: 0 30px 0 20px;
 }
 
+.white_a {
+    color: white !important;
+}
+.signup .login__form:after{
+    height: 560px !important;
+}
+
+.signup .login__form.edit:after{
+    display: none;
+}
+
+// .signup .login__form.edit{
+//     padding-left: 400px !important;
+// }
 .anime__details__episodes {
     a {
         text-align: center;
