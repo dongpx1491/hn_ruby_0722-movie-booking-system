@@ -173,6 +173,7 @@ vi:
       facebook: "Đăng nhập bằng Facebook"
       google: "Đăng nhập bằng Google"
       twitter: "Đăng nhập bằng Twitter"
+      remember_me: "Ghi nhớ tài khoản của tôi"
     create:
       success: "Chào mừng bạn tới Movie Booking App!"
       danger: "Tạo tài khoản thất bại"

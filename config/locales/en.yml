@@ -173,6 +173,7 @@ en:
       facebook: "Sign in With Facebook"
       google: "Sign in With Google"
       twitter: "Sign in With Twitter"
+      remember_me: "Remember me on this computer"
     create:
       success: "Welcome to the Movie Booking App!"
       danger: "Fail to create account"
