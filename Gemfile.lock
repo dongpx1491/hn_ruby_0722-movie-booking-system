@@ -388,6 +388,7 @@ DEPENDENCIES
   config
   database_cleaner
   date_validator
+  factory_bot
   factory_bot_rails
   faker
   figaro

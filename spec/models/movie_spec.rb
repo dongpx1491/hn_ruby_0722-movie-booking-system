@@ -10,11 +10,11 @@ RSpec.describe Movie, type: :model do
   describe "validation" do
     context "when field title" do
       it { should validate_presence_of(:title) }
-      it { should validate_length_of(:title).is_at_most(Settings.movie.name.max_length)} 
+      it { should validate_length_of(:title).is_at_most(Settings.movie.name.max_length)}
     end
-    context "when field description" do 
+    context "when field description" do
       it { should validate_presence_of(:description) }
-      it { should validate_length_of(:description).is_at_most(Settings.movie.content.max_length)} 
+      it { should validate_length_of(:description).is_at_most(Settings.movie.content.max_length)}
     end
     [:release_date, :language, :duration, :cast, :director].each do |field|
       context "when field #{field}" do
