@@ -8,9 +8,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      log_in @user
-      redirect_to login_path
-      flash[:success] = t ".success"
+      @user.send_activation_email
+      flash[:info] = t ".check_email"
+      redirect_to login_url
     else
       flash[:danger] = t "danger"
       render :new
@@ -30,7 +30,6 @@ class UsersController < ApplicationController
   end
 
   private
-
   def find_user
     @user = User.find_by id: params[:id]
     return if @user

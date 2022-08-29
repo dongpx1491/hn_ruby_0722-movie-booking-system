@@ -1,0 +1,16 @@
+<section class="signup spad">
+  <div class="container">
+    <div class="row">
+      <div class="login__form edit">
+        <h3><%= t ".reset" %></h3>
+        <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+          <div class="input__item">
+            <%= f.email_field :email, placeholder: t(".email") %>
+            <span ><i class="fa-solid fa-envelope"></i></span>
+          </div>
+          <%= f.submit t(".submit"), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

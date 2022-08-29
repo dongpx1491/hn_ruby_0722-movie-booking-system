@@ -7,7 +7,9 @@ User.create!(
   password_confirmation: "password",
   role: 1,
   date_of_birth: "2001/04/01",
-  phone_number: "0589122355"
+  phone_number: "0589122355",
+  activated: true,
+  activated_at: Time.zone.now
 )
 
 User.create!(
@@ -17,7 +19,9 @@ User.create!(
   password_confirmation: "password",
   date_of_birth: "2001/04/01",
   role: 0,
-  phone_number: "0123456789"
+  phone_number: "0123456789",
+  activated: true,
+  activated_at: Time.zone.now
 )
 
 20.times do
@@ -74,4 +78,3 @@ Show.create!(date: "2022-08-23",
             room_id: Room.all.pluck(:id).sample,
             end_time: "22:00"
 )
-
