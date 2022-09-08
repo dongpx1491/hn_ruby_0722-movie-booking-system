@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :genres
       resources :movies
       resources :shows
+      resources :payments
+      resources :users, only: %i(index show)
     end
     root "static_pages#home"
     get "/movies", to: "movies#sort"

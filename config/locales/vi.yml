@@ -17,6 +17,13 @@ vi:
   movie_create: "Tạo phim thành công"
   movie_create_failed: "Tạo thất bại"
   movie_delete_denied: "Không thể xóa do tìm thấy suất chiếu có liên kết với phim này"
+  show_update: "Cập nhật suất chiếu thành công"
+  show_update_failed: "Cập nhật thất bại"
+  show_delete: "Xóa suất chiếu thành công"
+  show_delete_failed: "Xóa thất bại"
+  show_create: "Tạo suất chiếu thành công"
+  show_create_failed: "Tạo thất bại"
+  show_delete_denied: "Không thể xóa do đang có vé đã được bán cho suất chiếu này"
   overlap: "Đang có phim được chiếu trong cùng khung giờ"
   date:
     formats:

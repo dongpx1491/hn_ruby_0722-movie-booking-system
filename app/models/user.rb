@@ -82,6 +82,7 @@ class User < ApplicationRecord
   def password_reset_expired?
     reset_sent_at < Settings.user.email.expired.hours.ago
   end
+  scope :incre_order, ->{order(id: :asc)}
 
   private
 

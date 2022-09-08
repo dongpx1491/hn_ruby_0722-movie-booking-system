@@ -1,0 +1,12 @@
+<tr>
+  <th><%= payment.id %></th>
+  <th><%= payment.user_name %></th>
+  <th><%= payment.user_phone_number %></th>
+  <th><%= payment.created_at.strftime("%d-%m-%y: %H:%M:%S") %></th>
+  <%= status_order payment.status.to_sym %>
+  <th>
+    <%= link_to admin_payment_path(payment.id), remote: true do %>
+      <span class="fa fa-pencil-square-o"></span>
+    <% end %>
+  </th>
+</tr>

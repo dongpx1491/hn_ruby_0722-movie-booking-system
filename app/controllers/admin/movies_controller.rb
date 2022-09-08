@@ -12,6 +12,7 @@ class Admin::MoviesController < Admin::AdminController
 
   def create
     @movie = Movie.new movie_params
+    @movie.image.attach(params[:movie][:image])
     if @movie.save
       flash[:success] = t "movie_create"
       redirect_to admin_movies_path

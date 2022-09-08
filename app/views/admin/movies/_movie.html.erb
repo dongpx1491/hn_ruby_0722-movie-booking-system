@@ -1,11 +1,8 @@
 <tr>
   <th><%= movie.id %></th>
   <th><%= movie.title %></th>
-  <th><%= movie.release_date %></th>
-  <th><%= movie.duration %></th>
+  <th><%= image_tag(movie.image, class:"image_tag") if movie.image.attached? %></th>
   <th><%= movie.language %></th>
-  <th><%= movie.cast %></th>
-  <th><%= movie.director %></th>
   <th><%= movie.status %></th>
   <th>
     <%= link_to edit_admin_movie_path(movie) do %>

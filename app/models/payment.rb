@@ -6,7 +6,17 @@ class Payment < ApplicationRecord
   belongs_to :user
 
   scope :latest, ->{order activated_at: :desc}
+  scope :incre_order, ->{order(status: :asc, created_at: :desc)}
   scope :show_active, ->{where status: :active}
+  scope :check_expire, (lambda do |id, created_at|
+    where("id = #{id} AND
+      timestampdiff(second,
+        DATE_FORMAT('#{created_at}', '%Y-%m-%d %T.%f'),
+        '#{Time.zone.now}') < 600
+      AND status = 0")
+  end)
+
+  delegate :name, :phone_number, to: :user, prefix: :user
 
   def send_activation_email
     PaymentMailer.payment_activation(self).deliver_now

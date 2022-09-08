@@ -1,0 +1,6 @@
+<% case payment.status.to_sym %>
+<% when :inactive %>
+  <%= select_status(payment) %>
+<% when :active %>
+  <p class="text-success"><%= "Complete" %></p>
+<% end %>

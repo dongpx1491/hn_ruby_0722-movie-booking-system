@@ -6,7 +6,7 @@ class Movie < ApplicationRecord
   has_many :shows, dependent: :destroy
   has_one_attached :image
   MOVIE_ATTR = %i(title description release_date duration language cast
-  director genre_id).freeze
+  director genre_id image).freeze
 
   delegate :name, to: :genre, prefix: true
 
@@ -24,4 +24,8 @@ class Movie < ApplicationRecord
   scope :search, (lambda do |key|
     where "title LIKE ? or description LIKE ?", "%#{key}%", "%#{key}%"
   end)
+
+  def display_image
+    image.variant(resize_to_limit: Settings.movie.image.image_movie)
+  end
 end

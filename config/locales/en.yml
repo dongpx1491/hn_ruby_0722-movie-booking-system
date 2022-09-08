@@ -17,6 +17,13 @@ en:
   movie_create: "Movie create successfully"
   movie_create_failed: "Create failed"
   movie_delete_denied: "Cannot delete because there were shows associated to this movie"
+  show_update: "Show updated"
+  show_update_failed: "Update failed"
+  show_delete: "Show deleted"
+  show_delete_failed: "Delete failed"
+  show_create: "Show create successfully"
+  show_create_failed: "Create failed"
+  show_delete_denied: "Cannot delete because there were tickets sold for this show"
   overlap: "Times overlap another showtime on this screen"
   date:
     formats:
