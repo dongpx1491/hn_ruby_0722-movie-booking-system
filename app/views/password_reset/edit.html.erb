@@ -1,0 +1,22 @@
+<section class="signup spad">
+  <div class="container">
+    <div class="row">
+      <div class="login__form edit">
+        <h3><%= t ".reset_password" %></h3>
+        <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <%= hidden_field_tag :email, @user.email %>
+          <div class="input__item">
+            <%= f.password_field :password, placeholder: t(".password") %>
+            <span class="icon_lock"></span>
+          </div>
+          <div class="input__item">
+            <%= f.password_field :password_confirmation, placeholder: t(".confirm_password") %>
+            <span class="icon_key"></span>
+          </div>
+          <%= f.submit t(".submit"), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
