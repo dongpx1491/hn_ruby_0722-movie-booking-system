@@ -27,10 +27,6 @@ gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "validates_timeliness", "~> 5.0"
 gem "webpacker", "~> 5.0"
-group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-  gem "rspec-rails", "~> 4.0.1"
-end
 
 group :development do
   gem "listen", "~> 3.3"
@@ -41,14 +37,21 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
+  gem "database_cleaner"
+  gem "rails-controller-testing"
   gem "selenium-webdriver", ">= 4.0.0.rc1"
-
+  gem "shoulda-matchers", "~> 5.0"
+  gem "simplecov"
+  gem "simplecov-rcov"
   gem "webdrivers"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
+  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails", require: false
+  gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false

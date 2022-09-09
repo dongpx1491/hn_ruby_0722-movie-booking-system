@@ -7,7 +7,7 @@ class Show < ApplicationRecord
   validate :check_overlap_time_first, :check_overlap_time_second,
            :check_overlap_time_third, :check_overlap_time_fourth
 
-  validates :date, date: {after: proc{Time.zone.now}}, on: :save
+  validates_date :date, after: Time.zone.now, on: :save
 
   scope :incre_order, ->{order id: :asc}
   scope :asc_date, ->{order date: :asc}
@@ -68,6 +68,8 @@ class Show < ApplicationRecord
                "Times overlap another showtime on this screen
                #{time_checker.map(&:id)}")
   end
+
+  private
 
   def update_end_time
     end_time = start_time + (movie.duration / 60.0).hours
