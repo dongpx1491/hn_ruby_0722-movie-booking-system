@@ -5,6 +5,7 @@ gem "active_storage_validations", "0.8.2"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "bootstrap-timepicker-rails"
+gem "cancancan"
 gem "config"
 gem "date_validator"
 gem "factory_bot"

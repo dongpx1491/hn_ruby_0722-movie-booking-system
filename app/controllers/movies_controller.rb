@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :find_movie, only: :show
+  authorize_resource
 
   def show; end
 

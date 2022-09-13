@@ -1,5 +1,6 @@
 class Admin::GenresController < Admin::AdminController
   before_action :find_genre, only: %i(edit update destroy)
+  authorize_resource
 
   def index
     @pagy, @genres = pagy Genre.asc_genre_name

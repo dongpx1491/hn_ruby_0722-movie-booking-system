@@ -1,5 +1,6 @@
 class Admin::UsersController < Admin::AdminController
   before_action :find_user, :load_payment, only: %i(show)
+  authorize_resource
 
   def index
     @pagy, @users = pagy User.customer.incre_order

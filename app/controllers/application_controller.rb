@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
 
   before_action :set_locale
+  rescue_from CanCan::AccessDenied, with: :deny_access
 
   private
   def set_locale
@@ -20,5 +21,10 @@ class ApplicationController < ActionController::Base
     store_location
     flash.now[:danger] = ".danger"
     redirect_to login_url
+  end
+
+  def deny_access
+    flash[:danger] = t "access_denied"
+    redirect_to root_url
   end
 end

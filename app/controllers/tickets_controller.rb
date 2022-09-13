@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
   before_action :logged_in_user
   before_action :find_ticket, only: :destroy
+  authorize_resource
 
   def create
     @ticket = Ticket.new ticket_params

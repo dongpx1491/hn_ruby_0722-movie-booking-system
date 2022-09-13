@@ -1,6 +1,7 @@
 class Admin::PaymentsController < Admin::AdminController
   before_action :find_payment, except: %i(index)
   before_action :load_ticket, only: %i(show)
+  authorize_resource
 
   def index
     @pagy, @payments = pagy Payment.incre_order

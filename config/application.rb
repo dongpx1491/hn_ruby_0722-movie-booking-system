@@ -24,5 +24,6 @@ module HnRuby0722MovieBookingSystem
     config.i18n.default_locale = :en
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.active_storage.variant_processor = :vips
+    config.action_dispatch.rescue_responses.merge!('CanCan::AccessDenied' => :unauthorized)
   end
 end

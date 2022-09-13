@@ -1,6 +1,7 @@
 class GenresController < ApplicationController
   before_action :find_genre, only: :show
   before_action :load_movie, only: :show
+  authorize_resource
 
   def show
     respond_to :js
