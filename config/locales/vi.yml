@@ -1,6 +1,7 @@
 vi:
   application:
   danger: "Vui lòng đăng nhập"
+  access_denied: "Quyền truy cập bị từ chối. Bạn không được phép truy cập trang được yêu cầu."
   movie_booking: Đặt vé xem phim
   genre_update: "Cập nhật thể loại thành công"
   genre_update_failed: "Cập nhật thất bại"

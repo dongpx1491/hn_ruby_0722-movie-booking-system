@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, :correct_user, only: %i(edit update)
+  authorize_resource
 
   def new
     @user = User.new

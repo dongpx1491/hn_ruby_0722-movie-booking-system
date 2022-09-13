@@ -1,6 +1,7 @@
 class Admin::MoviesController < Admin::AdminController
   before_action :find_movie, only: %i(edit update destroy)
   before_action :load_genre, except: %i(index destroy)
+  authorize_resource
 
   def index
     @pagy, @movies = pagy Movie.incre_order, items: Settings.model.limited

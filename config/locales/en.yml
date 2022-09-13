@@ -1,6 +1,7 @@
 en:
   application:
   danger: "Please log in"
+  access_denied: "Access denied. You are not authorized to access the requested page."
   movie_booking: Movie booking
   genre_update: "Genre updated"
   genre_update_failed: "Update failed"

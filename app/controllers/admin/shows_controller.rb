@@ -1,6 +1,7 @@
 class Admin::ShowsController < Admin::AdminController
   before_action :find_show, only: %i(edit update destroy)
   before_action :load_movie_room, except: %i(index destroy)
+  authorize_resource
 
   def index
     @pagy, @shows = pagy Show.incre_order
