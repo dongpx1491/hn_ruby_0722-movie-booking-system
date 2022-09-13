@@ -92,4 +92,3 @@ Show.create!(date: "2022-08-23",
     phone_number: '0931230911'
   )
 end
-
