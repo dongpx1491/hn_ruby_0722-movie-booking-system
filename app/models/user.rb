@@ -1,7 +1,11 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable
+         :confirmable, :omniauthable,
+         omniauth_providers: [:facebook, :google_oauth2]
+
+  USER_ATTRS = %i(name date_of_birth phone_number email password
+                  password_confirmation).freeze
 
   before_save :downcase_email
 
@@ -20,9 +24,22 @@ class User < ApplicationRecord
             length: {maximum: Settings.user.name.max_length}
   validates :password, presence: true,
             length: {minimum: Settings.user.password.min_length}, if: :password
-  validates :phone_number, presence: true,
-            length: {is: Settings.user.phone_number.length}
-  validates :date_of_birth, presence: true
+  validates :phone_number,
+            length: {is: Settings.user.phone_number.length},
+            allow_nil: true
+
+  class << self
+    def omniauth_user auth
+      where(provider: auth.provider,
+            uid: auth.uid).first_or_initialize do |user|
+        user.name = auth.info.name
+        user.email = auth.info.email
+        user.password = Devise.friendly_token[0, 20]
+        user.uid = auth.uid
+        user.provider = auth.provider
+      end
+    end
+  end
 
   scope :incre_order, ->{order(id: :asc)}
 

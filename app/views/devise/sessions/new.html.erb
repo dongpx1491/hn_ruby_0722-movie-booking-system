@@ -52,18 +52,13 @@
             <span><%= t ".or" %></span>
             <ul>
               <li>
-                <%= link_to "#", class: "facebook" do %>
+                <%= link_to user_facebook_omniauth_authorize_path, class: "facebook", method: :post do %>
                   <i class="fa-brands fa-facebook-f"></i><%= t ".facebook" %>
                 <% end %>
               </li>
               <li>
-                <%= link_to "#", class: "google" do %>
+                <%= link_to user_google_oauth2_omniauth_authorize_path, class: "google", method: :post do %>
                   <i class="fa-brands fa-google"></i><%= t ".google" %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to "#", class: "twitter" do %>
-                  <i class="fa-brands fa-twitter"></i><%= t ".twitter" %>
                 <% end %>
               </li>
             </ul>

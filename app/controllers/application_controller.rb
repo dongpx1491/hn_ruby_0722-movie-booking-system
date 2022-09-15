@@ -17,11 +17,13 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    added_attrs = %i(name date_of_birth phone_number email password
-                  password_confirmation remember_me)
+    added_signup_attrs = %i(name phone_number email password
+                         password_confirmation)
+    added_update_attrs = %i(name date_of_birth phone_number email password
+                         password_confirmation)
 
-    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+    devise_parameter_sanitizer.permit :sign_up, keys: added_signup_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_update_attrs
   end
 
   def deny_access
