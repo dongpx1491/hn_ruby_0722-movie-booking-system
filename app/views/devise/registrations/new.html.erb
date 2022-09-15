@@ -1,0 +1,86 @@
+<% provide :button_text, t(".submit") %>
+<section class="normal-breadcrumb set-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="normal__breadcrumb__text">
+          <h2><%= t ".sign_up" %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="signup spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="login__form">
+          <h3><%= t ".sign_up" %></h3>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="input__item">
+              <%= f.text_field :name, placeholder: t(".name") %>
+              <span class="icon_profile"></span>
+            </div>
+            
+            <div class="input__item">
+              <%= f.email_field :email, placeholder: t(".email") %>
+              <span ><i class="fa-solid fa-envelope"></i></span>
+            </div>
+
+            <div class="input__item">
+              <%= f.date_field :date_of_birth, placeholder: t(".date_of_birth") %>
+              <span class="icon_id_alt"></span>
+            </div>
+
+            <div class="input__item">
+              <%= f.number_field :phone_number, placeholder: t(".phone_number") %>
+              <span class="icon_phone"></span>
+            </div>
+
+            <div class="input__item">
+              <% if @minimum_password_length %>
+              <%= f.password_field :password, autocomplete: "new-password", 
+              placeholder: "#{@minimum_password_length} characters minimum" %>
+              <% end %>
+              <span class="icon_lock"></span>
+            </div>
+
+            <div class="input__item">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",
+              placeholder: "" %>
+              <span class="icon_lock"></span>
+            </div>
+
+            <%= f.submit yield(:button_text), class: "site-btn" %>
+          <% end %>
+
+          <h5><%= t ".have_account" %><%= link_to t(".log_in"), new_user_session_path %></h5>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="login__social__links">
+          <h3><%= t ".log_in_with" %></h3>
+          <ul>
+            <li>
+              <%= link_to "#", class: "facebook" do %>
+                <i class="fa-brands fa-facebook-f"></i><%= t ".facebook" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#", class: "google" do %>
+                <i class="fa-brands fa-google"></i><%= t ".google" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#", class: "twitter" do %>
+                <i class="fa-brands fa-twitter"></i><%= t ".twitter" %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

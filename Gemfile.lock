@@ -105,6 +105,12 @@ GEM
       activemodel (>= 3)
       activesupport (>= 3)
     deep_merge (1.2.2)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.0)
     digest (3.1.0)
     docile (1.4.0)
@@ -205,6 +211,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pagy (5.10.1)
       activesupport
     parallel (1.22.1)
@@ -266,6 +273,9 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.5.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.5)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
@@ -322,6 +332,8 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    shoulda-callback-matchers (1.1.4)
+      activesupport (>= 3)
     shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
     simplecov (0.21.2)
@@ -353,6 +365,8 @@ GEM
     unicode-display_width (2.2.0)
     validates_timeliness (5.0.0)
       timeliness (>= 0.3.10, < 1)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -390,6 +404,7 @@ DEPENDENCIES
   config
   database_cleaner
   date_validator
+  devise
   factory_bot
   factory_bot_rails
   faker
@@ -421,6 +436,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.14.0)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
+  shoulda-callback-matchers (~> 1.1.1)
   shoulda-matchers (~> 5.0)
   simplecov
   simplecov-rcov

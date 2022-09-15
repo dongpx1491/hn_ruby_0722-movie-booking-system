@@ -1,7 +1,7 @@
 class ShowsController < ApplicationController
   before_action :find_movie
-  before_action :logged_in_user, only: :show
   authorize_resource
+  before_action :authenticate_user!, only: :show
 
   def index
     @pagy, @shows = pagy @movie.shows.asc_date.asc_time

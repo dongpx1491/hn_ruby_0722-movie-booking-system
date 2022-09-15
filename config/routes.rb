@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   scope "(:locale)", locale: /en|vi/ do
     namespace :admin do
       root "static_pages#home"
@@ -11,10 +12,6 @@ Rails.application.routes.draw do
     end
     root "static_pages#home"
     get "/movies", to: "movies#sort"
-    get "/signup", to: "users#new"
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
     get "/activation", to: "payments#activation"
     resources :tickets
     resources :users
