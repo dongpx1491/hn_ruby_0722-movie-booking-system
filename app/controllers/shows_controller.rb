@@ -4,7 +4,11 @@ class ShowsController < ApplicationController
   authorize_resource
 
   def index
-    @pagy, @shows = pagy @movie.shows.asc_date.asc_time
+    @search_show = @movie.shows.ransack(params[:q])
+    if @search_show.sorts.empty?
+      @search_show.sorts = ["date asc", "start_time asc"]
+    end
+    @pagy, @shows = pagy @search_show.result
   end
 
   def show

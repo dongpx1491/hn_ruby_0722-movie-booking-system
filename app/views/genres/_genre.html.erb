@@ -1,5 +1,5 @@
 <div class="filter__gallery">
   <div class="product__sidebar__view__item set-bg resize_genre">
-    <h5 class="center_h5"><%= link_to genre.name, genre, remote: true %></h5>
+    <h5 class="center_h5"><%= link_to genre.name, movies_path(m: {genre_eq: genre.name}), remote: true %></h5>
   </div>
 </div>

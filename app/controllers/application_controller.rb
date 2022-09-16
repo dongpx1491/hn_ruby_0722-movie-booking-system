@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include PaymentsHelper
   include Pagy::Backend
 
-  before_action :set_locale
+  before_action :set_locale, :ransack_movie
   rescue_from CanCan::AccessDenied, with: :deny_access
 
   private
@@ -26,5 +26,9 @@ class ApplicationController < ActionController::Base
   def deny_access
     flash[:danger] = t "access_denied"
     redirect_to root_url
+  end
+
+  def ransack_movie
+    @search = Movie.ransack(params[:m])
   end
 end

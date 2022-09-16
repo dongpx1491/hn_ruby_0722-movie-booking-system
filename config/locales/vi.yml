@@ -67,6 +67,9 @@ vi:
       shows_list: "Danh sách suất chiếu"
       movies: "phim"
       shows: "Suất chiếu"
+      start: "Từ ngày: "
+      end: "Đến ngày: "
+      search: "Tìm kiếm"
     show:
       seats_list: "Danh sách ghế:"
       going: "Đi tới thanh toán"
@@ -164,6 +167,9 @@ vi:
       total: "Tổng tiền"
       details: "Chi tiết"
       info: "Bạn chưa có đơn hàng nào"
+      start: "Từ ngày: "
+      end: "Đến ngày: "
+      search: "Tìm kiếm"
     show:
       h5: "Đơn hàng của bạn"
       total: "Tổng tiền:"

@@ -9,6 +9,8 @@ class Movie < ApplicationRecord
 
   delegate :name, to: :genre, prefix: true
 
+  ransack_alias :genre, :genre_name
+
   validates :title, presence: true,
   length: {maximum: Settings.movie.name.max_length}, uniqueness: true
   validates :description, presence: true,
@@ -18,11 +20,9 @@ class Movie < ApplicationRecord
   validates :duration, :language, :cast, :director, presence: true
 
   scope :release, ->{where "release_date >= ?", Time.zone.now}
-  scope :latest, ->{order id: :desc}
+  scope :latest, ->{order created_at: :desc}
   scope :incre_order, ->{order(id: :asc)}
-  scope :search, (lambda do |key|
-    where "title LIKE ? or description LIKE ?", "%#{key}%", "%#{key}%"
-  end)
+  scope :active, ->{where status: :active}
 
   def display_image
     image.variant(resize_to_limit: Settings.movie.image.image_movie)
