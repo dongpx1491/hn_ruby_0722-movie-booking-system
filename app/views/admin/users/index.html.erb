@@ -1,19 +1,23 @@
 <% provide :title, t(".user") %>
 
 <h1><%= t ".user" %></h1>
-<table>
-  <tr>
-    <th>STT</th>
-    <th><%= t ".user" %></th>
-    <th><%= t ".email" %></th>
-    <th><%= t ".phone_number" %></th>
-    <th><%= t ".date_of_birth" %></th>
-    <th><%= t ".action" %></th>
-  </tr>
-  <tbody>
-    <%= render @users %>
-  </tbody>
-</table>
+<%= render partial: "search"%>
+<div class="table-users">
+  <table cellspacing="0">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th><%= t ".user" %></th>
+        <th><%= t ".email" %></th>
+        <th><%= sort_link @search, :total_payment, t(".total_payment") %></th>
+        <th><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @users %>
+    </tbody>
+  </table>
+</div>
 
 <%== pagy_bootstrap_nav @pagy %>
 

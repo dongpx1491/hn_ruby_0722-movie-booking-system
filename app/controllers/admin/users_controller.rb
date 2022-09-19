@@ -3,7 +3,9 @@ class Admin::UsersController < Admin::AdminController
   authorize_resource
 
   def index
-    @pagy, @users = pagy User.customer.incre_order
+    @search = User.ransack params[:q]
+    @pagy, @users = pagy @search.result.get_user.incre_order,
+                         items: Settings.model.limited
   end
 
   def show

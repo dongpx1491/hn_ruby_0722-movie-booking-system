@@ -9,6 +9,7 @@ class Payment < ApplicationRecord
   scope :incre_order, ->{order(status: :asc, created_at: :desc)}
 
   delegate :name, :phone_number, to: :user, prefix: :user
+  delegate :movie_id, to: :movie, prefix: :movie
 
   def send_activation_email
     PaymentMailer.payment_activation(self).deliver_now

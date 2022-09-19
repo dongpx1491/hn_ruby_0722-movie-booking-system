@@ -79,7 +79,7 @@ en:
         leave: "Leave blank if you don't want to change it"
         enter: "Enter your current password to confirm changes" 
     sessions:
-      signed_in: "Signed in successfully."
+      signed_in: ""
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
       new:

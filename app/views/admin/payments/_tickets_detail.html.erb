@@ -1,10 +1,7 @@
 <tr>
   <th><%= ticket_counter + 1 %></th>
-  <th><%= ticket.show.movie_title %></th>
   <th><%= ticket.seat_id %></th>
   <th><%= ticket.seat_type_seat %></th>
   <th><%= ticket.show_room.name %></th>
-  <th><%= ticket.show_date %></th>
-  <th><%= l(ticket.show_start_time, format: :short) %></th>
   <th><%= ticket.seat_price %></th>
 </tr>
