@@ -6,38 +6,37 @@
           <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-8">
               <div class="section-title">
-                <h4 class="left_height"><%= button_to t(".now_showing"), movies_path,method: :get,
-                        params: {sort: :showing}, class: "tab__button tab__button-active", remote: true %></h4>
-                <h4 class="left_height"><%= button_to t(".coming_soon"), movies_path,  method: :get,
-                        params: {sort: :coming}, class: "tab__button1", remote: true %>
+                <h4 class="left_height"><%= button_to t(".now_showing"), movies_path, method: :get,
+                        params: {sort: :showing, m: {status_eq: 1}}, class: "tab__button tab__button-active", remote: true %></h4>
+                <h4 class="left_height"><%= button_to t(".coming_soon"), movies_path, method: :get,
+                        params: {sort: :coming, m: {status_eq: 0}}, class: "tab__button1", remote: true %>
                 </h4>
-              </h4>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="btn__all">
-              <%= link_to t(".all"), movies_path(sort: :all),  method: :get,
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="btn__all">
+                <%= link_to t(".all"), movies_path(sort: :all, m: {id_not_null: 1}),  method: :get,
                  class: "primary-btn1", remote: true %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row" id="movies_list">
-          <%= render partial: "shared/movie", collection: @movies %>
-        </div>
-        <div id="pagy">
-          <%= render partial: "shared/pagy", locals: { pagy: @pagy } %>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8">
-      <div class="product__sidebar">
-        <div class="product__sidebar__view">
-          <div class="section-title">
-            <h5><%= t ".genre" %></h5>
+          <div class="row" id="movies_list">
+            <%= render partial: "shared/movie", collection: @movies %>
           </div>
-          <%= render @genres %>
+          <div id="pagy">
+            <%= render partial: "shared/pagy", locals: { pagy: @pagy } %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="product__sidebar">
+          <div class="product__sidebar__view">
+            <div class="section-title">
+              <h5><%= t ".genre" %></h5>
+            </div>
+            <%= render @genres %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>

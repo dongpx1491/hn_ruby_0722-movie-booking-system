@@ -43,6 +43,10 @@ class Payment < ApplicationRecord
     created_at < Settings.payment.expired.minutes.ago
   end
 
+  ransacker :created_at, type: :date do
+    Arel.sql("date(created_at at time zone 'UTC' at time zone 'Hanoi')")
+  end
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost

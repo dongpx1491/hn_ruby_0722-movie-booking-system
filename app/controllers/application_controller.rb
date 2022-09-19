@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
   protect_from_forgery prepend: true
 
-  before_action :set_locale
+  before_action :set_locale, :ransack_movie
   rescue_from CanCan::AccessDenied, with: :deny_access
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -29,5 +29,9 @@ class ApplicationController < ActionController::Base
   def deny_access
     flash[:danger] = t "access_denied"
     redirect_to root_url
+  end
+
+  def ransack_movie
+    @search = Movie.ransack(params[:m])
   end
 end

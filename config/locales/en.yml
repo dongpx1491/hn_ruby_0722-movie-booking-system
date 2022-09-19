@@ -67,6 +67,9 @@ en:
       shows_list: "Shows list"
       movies: "movie"
       shows: "Shows"
+      start: "Start date:"
+      end: "End date:"
+      search: "Search"
     show:
       seats_list: "Seats list:"
       going: "Go to Payment"
@@ -164,6 +167,9 @@ en:
       total: "Total"
       details: "Details"
       info: "You dont have any payments"
+      start: "Start date:"
+      end: "End date:"
+      search: "Search"
     show:
       h5: "Your order"
       total: "Total:"
