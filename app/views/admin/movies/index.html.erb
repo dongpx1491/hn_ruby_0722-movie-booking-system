@@ -1,6 +1,7 @@
 <% provide :title, t(".movie") %>
 
 <h1><%= t ".movie" %></h1>
+<%= render partial: "search"%>
 <%= link_to new_admin_movie_path, class: "new-genre" do %>
   <span class="fa fa-plus-circle circle"></span>
   <%= t ".create" %>
@@ -11,10 +12,11 @@
     <thead>
       <tr>
         <th><%= t ".id" %></th>
-        <th><%= t ".movie" %></th>
+        <th><%= sort_link @search, :title, t(".movie") %></th>
         <th><%= t ".poster" %></th>
-        <th><%= t ".language" %></th>
-        <th><%= t ".status" %></th>
+        <th><%= sort_link @search, :release_date, t(".release_date") %></th>
+        <th><%= t ".genre" %></th>
+        <th><%= sort_link @search, :status, t(".status") %></th>
         <th><%= t ".action" %></th>
       </tr>
     </thead>

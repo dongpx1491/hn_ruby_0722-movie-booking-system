@@ -287,6 +287,9 @@ en:
         revenue: "Revenue"
         signout: "Sign Out"
     movies:
+      not_found: "Movie not found"
+      search:
+        searchfor: "Search:"
       index:
         id: "ID"
         movie: "Movie"

@@ -1,16 +1,21 @@
 <% provide :title, t(".genre") %>
 <h1><%= t ".genre" %></h1>
+<%= render partial: "search"%>
 <%= link_to new_admin_genre_path, class: "new-genre" do %>
   <span class="fa fa-plus-circle circle"></span>
   <%= t ".create" %>
 <% end %>
-<table>
-  <tr>
-    <th>STT</th>
-    <th><%= t ".genre" %></th>
-    <th><%= t ".action" %></th>
-  </tr>
-  <tbody>
-    <%= render @genres %>
-  </tbody>
-</table>
+<div class="table-users">
+  <table cellspacing="0">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th><%= sort_link @search, :name, t(".genre") %></th>
+        <th><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @genres %>
+    </tbody>
+  </table>
+</div>

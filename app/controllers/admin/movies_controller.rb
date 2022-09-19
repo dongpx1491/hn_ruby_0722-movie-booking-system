@@ -4,7 +4,9 @@ class Admin::MoviesController < Admin::AdminController
   authorize_resource
 
   def index
-    @pagy, @movies = pagy Movie.incre_order, items: Settings.model.limited
+    @search = Movie.ransack params[:q]
+    @pagy, @movies = pagy @search.result.incre_order,
+                          items: Settings.model.limited
   end
 
   def new

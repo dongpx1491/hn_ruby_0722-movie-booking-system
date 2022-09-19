@@ -33,7 +33,7 @@
           <% end %>
         </div>
       </div>
-      <%= link_to logout_path, method: :delete, class: "nav_link" do %> 
+      <%= link_to destroy_user_session_path, method: :delete, class: "nav_link" do %> 
         <i class='fa fa-sign-out'></i> 
         <span class="nav_name"><% t ".signout" %></span> 
       <% end %>

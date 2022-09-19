@@ -34,4 +34,12 @@ class ApplicationController < ActionController::Base
   def ransack_movie
     @search = Movie.ransack(params[:m])
   end
+
+  def after_sign_in_path_for resource
+    if resource.admin?
+      admin_root_path
+    else
+      root_path
+    end
+  end
 end
