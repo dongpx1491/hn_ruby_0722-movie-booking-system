@@ -3,7 +3,9 @@ class Admin::GenresController < Admin::AdminController
   authorize_resource
 
   def index
-    @pagy, @genres = pagy Genre.asc_genre_name
+    @search = Genre.ransack params[:q]
+    @pagy, @genres = pagy @search.result.asc_genre_name,
+                          items: Settings.model.limited
   end
 
   def new

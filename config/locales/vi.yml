@@ -99,6 +99,8 @@ vi:
       genre: "Thể loại"
   movies:
     not_found: "Không tìm thấy phim"
+    search:
+        searchfor: "Tìm kiếm:"
     index:
       showing: "Đang công chiếu"
       coming_soon: "Sắp khởi chiếu"

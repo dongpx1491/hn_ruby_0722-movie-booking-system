@@ -7,9 +7,7 @@ User.create!(
   password_confirmation: "password",
   role: 1,
   date_of_birth: "2001/04/01",
-  phone_number: "0589122355",
-  activated: true,
-  activated_at: Time.zone.now
+  phone_number: "0589122355"
 )
 
 User.create!(
