@@ -7,14 +7,6 @@ class Payment < ApplicationRecord
 
   scope :latest, ->{order activated_at: :desc}
   scope :incre_order, ->{order(status: :asc, created_at: :desc)}
-  scope :show_active, ->{where status: :active}
-  scope :check_expire, (lambda do |id, created_at|
-    where("id = #{id} AND
-      timestampdiff(second,
-        DATE_FORMAT('#{created_at}', '%Y-%m-%d %T.%f'),
-        '#{Time.zone.now}') < 600
-      AND status = 0")
-  end)
 
   delegate :name, :phone_number, to: :user, prefix: :user
 
@@ -40,7 +32,7 @@ class Payment < ApplicationRecord
   end
 
   def payment_expired?
-    created_at < Settings.payment.expired.minutes.ago
+    created_at < Settings.payment.expired.minutes.ago && inactive?
   end
 
   ransacker :created_at, type: :date do

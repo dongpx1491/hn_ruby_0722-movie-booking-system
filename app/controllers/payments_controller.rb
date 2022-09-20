@@ -32,7 +32,7 @@ class PaymentsController < ApplicationController
     @payment = current_payment
     return if @payment
 
-    flash[:danger] = t ".not_found"
+    flash[:danger] = t ".danger"
     redirect_to root_path
   end
 

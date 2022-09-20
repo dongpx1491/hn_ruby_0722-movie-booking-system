@@ -16,6 +16,10 @@ module PaymentsHelper
     @current_payment = nil
   end
 
+  def check_payment?
+    Payment.find_by(id: session[:payment_id]) && session[:payment_id]
+  end
+
   def add_total_price ticket
     total = current_payment.total + ticket.seat.price
     current_payment.update_attribute(:total, total)

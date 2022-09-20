@@ -35,6 +35,7 @@ gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "validates_timeliness", "~> 5.0"
 gem "webpacker", "~> 5.0"
+gem "whenever", require: false
 
 group :development do
   gem "listen", "~> 3.3"

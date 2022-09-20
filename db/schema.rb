@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2022_09_12_090002) do
     t.string "title"
     t.text "description"
     t.date "release_date"
-    t.integer "duration"
+    t.time "duration"
     t.string "language"
     t.string "cast"
     t.string "director"
@@ -154,6 +154,12 @@ ActiveRecord::Schema.define(version: 2022_09_12_090002) do
     t.integer "role", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "remember_digest"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -172,13 +178,13 @@ ActiveRecord::Schema.define(version: 2022_09_12_090002) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "movies", "genres"
   add_foreign_key "payments", "discounts"
-  add_foreign_key "payments", "users"
+  add_foreign_key "payments", "users", on_delete: :cascade
   add_foreign_key "ratings", "movies"
   add_foreign_key "ratings", "users"
   add_foreign_key "seats", "rooms"
   add_foreign_key "shows", "movies"
   add_foreign_key "shows", "rooms"
-  add_foreign_key "tickets", "payments"
+  add_foreign_key "tickets", "payments", on_delete: :cascade
   add_foreign_key "tickets", "seats"
   add_foreign_key "tickets", "shows"
   add_foreign_key "user_discounts", "discounts"
