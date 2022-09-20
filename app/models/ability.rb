@@ -9,7 +9,7 @@ class Ability
     can :create, User
     return if user.blank?
 
-    can %i(read update), User, id: user.id, role: :customer
+    can %i(read update), User, id: user.id
     can %i(manage activation), Payment, user: user
     cannot :delete, Payment, status: :active
     can :manage, Ticket, user: user

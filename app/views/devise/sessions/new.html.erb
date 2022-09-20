@@ -17,6 +17,7 @@
         <div class="login__form">
           <h3><%= t ".login"%></h3>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "shared/error_messages" %>
             <div class="input__item">
               <%= f.email_field :email, placeholder: t(".email") %>
               <span ><i class="fa-solid fa-envelope"></i></span>

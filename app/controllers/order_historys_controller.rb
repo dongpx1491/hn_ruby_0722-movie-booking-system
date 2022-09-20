@@ -6,7 +6,7 @@ class OrderHistorysController < ApplicationController
     if current_user.payments.present?
       @search_order = current_user.payments.ransack(params[:q])
       @search_order.sorts = "activated_at DESC" if @search_order.sorts.empty?
-      @pagy, @payments = pagy @search_order.result.show_active
+      @pagy, @payments = pagy @search_order.result.active
     else
       flash[:info] = t ".info"
       redirect_to root_url

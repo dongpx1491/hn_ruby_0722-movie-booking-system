@@ -12,8 +12,9 @@ class ShowsController < ApplicationController
   end
 
   def show
-    unless have_payment?
-      @payment = Payment.create user_id: session[:user_id]
+    unless check_payment?
+      delete_payment
+      @payment = Payment.create user_id: current_user.id
       init_payment @payment
     end
     @show = @movie.shows.find_by id: params[:id]
