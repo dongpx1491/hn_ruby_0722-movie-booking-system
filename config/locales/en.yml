@@ -155,8 +155,7 @@ en:
     payment_activation:
       subject: "Confirm the payment"
       h1: "Confirm the Payment"
-      hi: "Hi "
-      link: ", click the link below to confirm your payment: "
+      hi: "Hi %{user_name}, click the link below to confirm your payment:"
       confirm: "Confirm your payment"
   order_historys:
     index:
