@@ -157,8 +157,7 @@ vi:
     payment_activation:
       subject: "Xác nhận thanh toán"
       h1: "Xác nhận thanh toán"
-      hi: "xin chào "
-      link: ", click vào đường link dưới đây để thực hiện thanh toán: "
+      hi: "xin chào %{user_name}, click vào đường link dưới đây để thực hiện thanh toán: "
       confirm: "Xác nhận thanh toán"
   order_historys:
     index:

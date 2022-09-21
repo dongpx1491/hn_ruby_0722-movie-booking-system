@@ -8,8 +8,7 @@ class PaymentsController < ApplicationController
   end
 
   def activation
-    @payment.create_activation_digest
-    @payment.send_activation_email
+    ActivePaymentWorker.perform_async @payment.id
     flash[:info] = t ".info"
     redirect_to payment_path(current_payment)
   end
