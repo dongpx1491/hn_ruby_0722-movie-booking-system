@@ -1,8 +1,8 @@
 class FavoritesController < ApplicationController
-  authorize_resource class: false
+  authorize_resource
 
   def index
-    @pagy, @movies = pagy current_user.movies
+    @pagy, @movies = pagy current_user.movies.latest
   end
 
   def create
@@ -12,6 +12,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite = current_user.favorites.find_by(id: params[:id])
+    params[:id] = params[:movie_id]
     if @favorite
       @favorite.destroy
       respond_to :js

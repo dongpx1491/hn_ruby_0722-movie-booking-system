@@ -1,3 +1,4 @@
-<%= link_to favorite_path(favorited(current_user, params[:id]).id), method: :delete, class: "follow-btn unfollow", remote: true do %>
+<%= link_to favorite_path(favorited(current_user, params[:id]).id, movie_id: params[:id]),
+            method: :delete, class: "follow-btn unfollow", remote: true do %>
   <i class="fa fa-heart-o"></i> <%= t ".unfavorite" %>
 <% end %>

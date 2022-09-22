@@ -2,7 +2,10 @@ class MoviesController < ApplicationController
   before_action :find_movie, only: :show
   authorize_resource
 
-  def show; end
+  def show
+    @pagy, @ratings = pagy @movie.ratings.latest,
+                           items: Settings.page.comment
+  end
 
   def sort
     @pagy, @movies = pagy @search.result.latest,

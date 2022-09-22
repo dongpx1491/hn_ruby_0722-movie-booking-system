@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :payments
     resources :order_historys
     resources :favorites, only: %i(index create destroy)
+    resources :ratings, only: :create
     resources :payment_activations, only: :edit
     resources :movies, only: %i(index show) do
       resources :shows
