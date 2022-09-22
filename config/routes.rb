@@ -20,8 +20,7 @@ Rails.application.routes.draw do
     resources :genres, only: :show
     resources :payments
     resources :order_historys
-    resources :account_activations, only: :edit
-    resources :password_resets, except: %i(show destroy index)
+    resources :favorites, only: %i(index create destroy)
     resources :payment_activations, only: :edit
     resources :movies, only: %i(index show) do
       resources :shows

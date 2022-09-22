@@ -1,0 +1,3 @@
+<span id="favorite_button">
+  <%= favorited(current_user, params[:id]) ? render("remove_favorite") : render("add_favorite") %>
+</span>

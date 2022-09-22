@@ -1,0 +1,13 @@
+<div class="section-title">
+  <h5><%= t ".h5" %></h5>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="trending__product">
+      <div class="row">
+        <%= render @movies %>
+      </div>
+      <%= render partial: "shared/pagy", locals: { pagy: @pagy } %>
+    </div>
+  </div>
+</div>

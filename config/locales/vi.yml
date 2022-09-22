@@ -51,7 +51,7 @@ vi:
       homepage: "Trang chủ"
       booking: "Đặt vé"
       blog: "Góc điện ảnh"
-      contact: "Hỗ trợ"
+      favorites: "Phim yêu thích"
       member: "Thành viên"
       edit: "Sửa thông tin"
       log_out: "Đăng xuất"
@@ -76,6 +76,9 @@ vi:
       movies: "phim"
       shows: "suất chiếu"
       seats: "ghế ngồi"
+  favorites:
+    index:
+      h5: "Phim yêu thích của bạn"
   genres:
     not_found: "Không tìm thấy thể loại"
   tickets:
@@ -122,6 +125,10 @@ vi:
       comments: "Đánh giá của bạn"
       review: "Đánh giá"
       might_like: "Bạn có thể thích ..."
+    add_favorite:
+      favorite: "Yêu thích"
+    remove_favorite:
+      unfavorite: "Bỏ yêu thích"
   shared:
     error_messages:
       content: "Biểu mẫu chứa"

@@ -51,7 +51,7 @@ en:
       homepage: "Homepage"
       booking: "Booking"
       blog: "Cinema Blog"
-      contact: "Contacts"
+      favorites: "Favorite Movies"
       member: "Member"
       edit: "Edit user"
       log_out: "Log out"
@@ -76,6 +76,9 @@ en:
       movies: "movie"
       shows: "Shows"
       seats: "Seats"
+  favorites:
+    index:
+      h5: "Your Favorite Movies"
   genres:
     not_found: "Cannot found genres"
   tickets:
@@ -120,6 +123,10 @@ en:
       comments: "Your Comment"
       review: "Review"
       might_like: "You might like ...."
+    add_favorite:
+      favorite: "Favorite"
+    remove_favorite:
+      unfavorite: "Unfavorite"
   shared:
     error_messages:
       content: "The form contains"

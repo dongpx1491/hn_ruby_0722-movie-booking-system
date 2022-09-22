@@ -14,7 +14,8 @@ class User < ApplicationRecord
   has_many :user_discounts, dependent: :destroy
   has_many :discounts, through: :user_discounts, dependent: :destroy
   has_many :payments, dependent: :destroy
-
+  has_many :favorites, dependent: :destroy
+  has_many :movies, through: :favorites
   validates :email, presence: true,
             length: {minium: Settings.user.email.min_length,
                      maximum: Settings.user.email.max_length},
