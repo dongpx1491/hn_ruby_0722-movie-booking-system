@@ -1,4 +1,6 @@
 class Payment < ApplicationRecord
+  include Admin::PaymentsHelper
+
   attr_accessor :activation_token
 
   enum status: {inactive: 0, active: 1}

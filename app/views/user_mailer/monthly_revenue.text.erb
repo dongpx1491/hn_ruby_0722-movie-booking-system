@@ -1,0 +1,25 @@
+<h1>
+  <%= t ".report_month"%> <%= Time.zone.today.strftime("%B") %>
+</h1>
+<h2>
+  <%= t ".this_month_total_revenue"%> <%= number_to_currency(@total_revenue_monthly) %>
+</h2>
+<h2>
+  <%= t ".details" %>:
+</h2>
+<% @movies.each do |movie| %>
+  <h3>
+    <%= movie.title %>
+  </h3>
+
+  <% movie.shows.created_month(Time.zone.today.month, Time.zone.today.year).each do |show| %>
+    <li>
+      <%= "#{show.date} - #{l(show.start_time, format: :short)} 
+            - #{number_to_currency(revenue(show))}"
+        %>
+    </li>
+  <% end %>
+<% end %>
+  <h3>
+    <%= "#{t(".total_revenue")}: #{number_to_currency(@total_revenue_monthly)}" %>
+  </h3>

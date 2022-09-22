@@ -17,6 +17,12 @@ class Show < ApplicationRecord
                                   (date = Date(?) AND start_time > Time(?))",
                                   Time.zone.now, Time.zone.now, Time.zone.now)
                           end)
+  scope :created_date, ->(date){where "date = ?", date}
+  scope :created_month, (lamda do
+                           where("MONTH(date) = month(?)
+                                    AND YEAR(date) = year(?)",
+                                 Time.zone.today, Time.zone.today)
+                         end)
   delegate :title, to: :movie, prefix: :movie
   delegate :name, to: :room, prefix: :room
 
