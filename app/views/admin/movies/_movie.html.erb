@@ -14,11 +14,11 @@
   </th>
   <th>
     <%= link_to edit_admin_movie_path(movie) do %>
-      <span class="fa fa-pencil"></span>
+      <span class="fa-solid fa-pencil"></span>
     <% end %>
     <%= link_to admin_movie_path(movie), method: :delete,
           data: { confirm: t(".confirm")} do %>
-      <span class="fa fa-trash"></span>
+      <span class="fa-solid fa-trash-can" style="color: red"></span>
     <% end %>
   </th>
 </tr>

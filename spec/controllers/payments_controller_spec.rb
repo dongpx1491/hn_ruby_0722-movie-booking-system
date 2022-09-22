@@ -15,7 +15,7 @@ RSpec.describe PaymentsController, type: :controller do
   describe "Dont have current payment" do
     before {get :show, params: {id: payment.id}}
     it "should flash error message" do
-      expect(flash[:danger]).to eq I18n.t("payments.not_found")
+      expect(flash[:danger]).to eq I18n.t("payments.danger")
     end
 
     it "redirect to root path" do

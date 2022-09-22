@@ -1,13 +1,26 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
   include PaymentsHelper
   include FavoritesHelper
   include Admin::PaymentsHelper
   include Pagy::Backend
-  protect_from_forgery prepend: true, except: :sort
+  attr_reader :current_user
+
+  # protect_from_forgery prepend: true, except: :sort
 
   before_action :set_locale, :ransack_movie
   rescue_from CanCan::AccessDenied, with: :deny_access
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+  def authenticate_request!
+    unless user_id_in_token?
+      render json: {errors: ["Not Authenticated"]}, status: :unauthorized
+      return
+    end
+    @current_user = User.find auth_token[:user_id]
+  rescue JWT::VerificationError, JWT::DecodeError
+    render json: {errors: ["Not Authenticated"]}, status: :unauthorized
+  end
 
   private
   def set_locale
@@ -16,6 +29,20 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def http_token
+    @http_token ||= if request.headers["Authorization"].present?
+                      request.headers["Authorization"].split(" ")[1]
+                    end
+  end
+
+  def auth_token
+    @auth_token ||= JsonWebToken.decode(http_token)
+  end
+
+  def user_id_in_token?
+    http_token && auth_token && auth_token[:user_id].to_i
   end
 
   def configure_permitted_parameters
@@ -42,6 +69,8 @@ class ApplicationController < ActionController::Base
     if resource.admin?
       admin_root_path
     else
+      flash[:danger] = t ".cannot_access_to_this_page"
+
       stored_location_for(resource) || root_url
     end
   end

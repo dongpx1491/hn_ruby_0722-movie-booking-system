@@ -20,6 +20,6 @@
     </li>
   <% end %>
   <h3>
-    <%= "#{t(".movie_revenue")}:" %>
+    <%= "#{t(".movie_revenue")}: #{number_to_currency(movie_revenue(movie))}"%>
   </h3>
 <% end %>

@@ -2,6 +2,6 @@ class DailyOrderWorker
   include Sidekiq::Worker
 
   def perform
-    UserMailer.monthly_order.deliver_later
+    UserMailer.monthly_revenue.deliver_now
   end
 end

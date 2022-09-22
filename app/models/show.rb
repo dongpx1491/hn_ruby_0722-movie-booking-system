@@ -3,11 +3,11 @@ class Show < ApplicationRecord
   belongs_to :room
   has_many :tickets, dependent: :destroy
   SHOW_ATTR = %i(date start_time movie_id room_id end_time).freeze
+  # before_validation :valid_format_showtime, :valid_date
+
   after_save :update_end_time
   validate :check_overlap_time_first, :check_overlap_time_second,
            :check_overlap_time_third, :check_overlap_time_fourth
-
-  validates_date :date, after: Time.zone.now, on: :save
 
   scope :incre_order, ->{order id: :asc}
   scope :asc_date, ->{order date: :asc}
@@ -17,14 +17,39 @@ class Show < ApplicationRecord
                                   (date = Date(?) AND start_time > Time(?))",
                                   Time.zone.now, Time.zone.now, Time.zone.now)
                           end)
+  scope :date, ->{where "date >= ?", Time.zone.today}
   scope :created_date, ->(date){where "date = ?", date}
   scope :created_month, (lamda do
                            where("MONTH(date) = month(?)
-                                    AND YEAR(date) = year(?)",
+                                  AND YEAR(date) = year(?)",
                                  Time.zone.today, Time.zone.today)
                          end)
   delegate :title, to: :movie, prefix: :movie
   delegate :name, to: :room, prefix: :room
+
+  def valid_date
+    if date.presence
+      if date > Time.zone.today
+        nil
+      else
+        errors.add(:date, message: " cannot smaller than current time")
+        false
+      end
+    else
+      errors.add(:date, message: "can't be found")
+      false
+    end
+  end
+
+  def valid_format_showtime
+    if start_time.presence
+      self.end_time = start_time + (movie.duration / 60.0).hours
+      return if start_time > Time.current
+    else
+      errors.add(:start_time, message: "can't be found")
+      false
+    end
+  end
 
   def check_overlap_time_first
     end_time = start_time + (movie.duration / 60.0).hours
