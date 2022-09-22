@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="row" id="movies_list">
-            <%= render partial: "shared/movie", collection: @movies %>
+            <%= render @movies %>
           </div>
           <div id="pagy">
             <%= render partial: "shared/pagy", locals: { pagy: @pagy } %>
