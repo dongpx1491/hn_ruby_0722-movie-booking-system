@@ -1,9 +1,9 @@
 <tr>
-  <th><%= payment.id %></th>
-  <th><%= payment.user_name %></th>
-  <th><%= payment.user_phone_number %></th>
-  <th><%= payment.created_at.strftime("%d-%m-%y: %H:%M:%S") %></th>
-  <%= status_order payment.status.to_sym %>
+  <th><%= payment.movie_title %></th>
+  <th><%= payment.date %></th>
+  <th><%= l(payment.start_time, format: :short) %></th>
+  <th><%= number_booked_seat(payment) %>/<%= total_seat(payment)%></th>
+  <th><%= number_to_currency(revenue(payment)) %></th>
   <th>
     <%= link_to admin_payment_path(payment.id), remote: true do %>
       <span class="fa fa-pencil-square-o"></span>

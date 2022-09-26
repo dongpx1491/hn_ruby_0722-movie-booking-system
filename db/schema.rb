@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2022_09_21_084825) do
     t.string "title"
     t.text "description"
     t.date "release_date"
-    t.time "duration"
+    t.integer "duration"
     t.string "language"
     t.string "cast"
     t.string "director"
@@ -172,9 +172,6 @@ ActiveRecord::Schema.define(version: 2022_09_21_084825) do
     t.string "unconfirmed_email"
     t.string "provider"
     t.string "uid"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -185,13 +182,13 @@ ActiveRecord::Schema.define(version: 2022_09_21_084825) do
   add_foreign_key "favorites", "users"
   add_foreign_key "movies", "genres"
   add_foreign_key "payments", "discounts"
-  add_foreign_key "payments", "users", on_delete: :cascade
+  add_foreign_key "payments", "users"
   add_foreign_key "ratings", "movies"
   add_foreign_key "ratings", "users"
   add_foreign_key "seats", "rooms"
   add_foreign_key "shows", "movies"
   add_foreign_key "shows", "rooms"
-  add_foreign_key "tickets", "payments", on_delete: :cascade
+  add_foreign_key "tickets", "payments"
   add_foreign_key "tickets", "seats"
   add_foreign_key "tickets", "shows"
   add_foreign_key "user_discounts", "discounts"

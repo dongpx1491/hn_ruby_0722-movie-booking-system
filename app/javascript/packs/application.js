@@ -18,4 +18,3 @@ import "@fortawesome/fontawesome-free/css/all";
 
 window.jQuery = $;
 window.$ = $;
-

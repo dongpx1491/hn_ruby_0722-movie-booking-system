@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get "/movies", to: "movies#sort"
     get "/activation", to: "payments#activation"
     resources :tickets
-    resources :users
+    resources :users, except: :index
     resources :genres, only: :show
     resources :payments
     resources :order_historys

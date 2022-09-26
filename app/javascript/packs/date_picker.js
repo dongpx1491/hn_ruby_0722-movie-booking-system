@@ -29,6 +29,7 @@ $(document).on('turbolinks:load', function () {
   function colorLink() {
     if (linkColor) {
       linkColor.forEach(l => l.classList.remove('active'))
+      console.log(this)
       this.classList.add('active')
     }
   }

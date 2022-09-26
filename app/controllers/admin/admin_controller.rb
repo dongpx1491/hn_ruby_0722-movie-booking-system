@@ -8,6 +8,7 @@ class Admin::AdminController < ApplicationController
   def is_admin?
     return admin_root_path if current_user.admin?
 
-    redirect_to login_path
+    flash[:danger] = t ".cannot_access_to_this_page"
+    redirect_to root_path
   end
 end

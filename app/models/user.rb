@@ -4,8 +4,7 @@ class User < ApplicationRecord
          :confirmable, :omniauthable,
          omniauth_providers: [:facebook, :google_oauth2]
 
-  USER_ATTRS = %i(name date_of_birth phone_number email password
-                  password_confirmation).freeze
+  USER_ATTRS = %i(id name date_of_birth phone_number email).freeze
 
   before_save :downcase_email
 
@@ -43,6 +42,7 @@ class User < ApplicationRecord
   end
 
   scope :incre_order, ->{order(id: :asc)}
+  scope :get_user, ->{select(USER_ATTRS).where(role: 0)}
 
   private
 

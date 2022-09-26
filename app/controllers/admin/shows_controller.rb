@@ -4,7 +4,9 @@ class Admin::ShowsController < Admin::AdminController
   authorize_resource
 
   def index
-    @pagy, @shows = pagy Show.incre_order
+    @search = Show.ransack params[:q]
+    @pagy, @shows = pagy @search.result.incre_order,
+                         items: Settings.model.limited
   end
 
   def new
