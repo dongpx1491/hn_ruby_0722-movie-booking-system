@@ -12,10 +12,8 @@ class Ability
     can %i(read update), User, id: user.id
     can %i(manage activation), Payment, user: user
     cannot :delete, Payment, status: :active
-    can :manage, Ticket, user: user
     can :manage, :order_history
     can :manage, Favorite, user: user
-    can :mange, Rating, user: user
     return unless user.admin?
 
     can :manage, :all

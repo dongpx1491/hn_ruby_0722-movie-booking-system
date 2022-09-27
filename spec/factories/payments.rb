@@ -7,6 +7,7 @@ FactoryBot.define do
     f.status {rand(0..1)}
     f.user_id {user.id}
     f.activation_digest {Faker::Internet.password}
-    f.activated_at {Time.now-15}
+    f.activated_at {Time.now - 15}
+    f.created_at {Time.now}
   end
 end

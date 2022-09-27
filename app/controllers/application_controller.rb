@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include PaymentsHelper
   include FavoritesHelper
   include Pagy::Backend
-  protect_from_forgery prepend: true
+  protect_from_forgery prepend: true, except: :sort
 
   before_action :set_locale, :ransack_movie
   rescue_from CanCan::AccessDenied, with: :deny_access

@@ -15,12 +15,12 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
-
+  config.include Devise::Test::ControllerHelpers, type: :controller
   require "simplecov"
   require "simplecov-rcov"
   require "shoulda/matchers"
   require "factory_bot_rails"
-
+  require "cancan/matchers"
   class SimpleCov::Formatter::MergedFormatter
     def format(result)
       SimpleCov::Formatter::HTMLFormatter.new.format(result)
@@ -37,4 +37,6 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+  
+  Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 end

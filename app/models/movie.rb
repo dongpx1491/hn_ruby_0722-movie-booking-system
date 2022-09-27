@@ -4,7 +4,7 @@ class Movie < ApplicationRecord
   has_one_attached :image
   has_many :ratings, dependent: :destroy
   has_many :shows, dependent: :destroy
-  has_many :ratings, dependent: :destroy
+
   MOVIE_ATTR = %i(title description release_date duration language cast
   director genre_id image).freeze
 

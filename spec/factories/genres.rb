@@ -1,7 +1,7 @@
 require "faker"
 
 FactoryBot.define do
-  factory :genre do |f|
-    f.name {Faker::Sports::Football.unique.team}
+  factory :genre do
+    sequence(:name) {|n| Faker::Lorem.word + n.to_s}
   end
 end

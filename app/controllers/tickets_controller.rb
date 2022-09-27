@@ -1,7 +1,6 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_ticket, only: :destroy
-  authorize_resource
 
   def create
     @ticket = Ticket.new ticket_params
@@ -18,8 +17,6 @@ class TicketsController < ApplicationController
     if @ticket.destroy
       flash[:success] = t ".success"
       minus_total_price @ticket
-    else
-      flash[:danger] = t ".danger"
     end
     redirect_to payment_path(current_payment)
   end
@@ -31,7 +28,7 @@ class TicketsController < ApplicationController
     return if @ticket
 
     flash[:warning] = t ".not_found"
-    redirect_to root_path
+    redirect_to payment_path(current_payment)
   end
 
   def ticket_params
