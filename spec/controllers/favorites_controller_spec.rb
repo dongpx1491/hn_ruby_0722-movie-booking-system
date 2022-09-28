@@ -5,7 +5,11 @@ RSpec.describe FavoritesController, type: :controller do
   let!(:user) {FactoryBot.create :user}
   let!(:movie) {FactoryBot.create :movie}
   let!(:favorites) {FactoryBot.create :favorite, user_id: user.id, movie_id: movie.id}
-  before {allow(controller).to receive(:current_user).and_return(user)}
+  before do
+    allow(controller).to receive(:current_user).and_return(user)
+    sign_in user
+    allow(controller).to receive(:authenticate_user!).and_return true
+  end
 
   describe "GET #index" do
     before {get :index}

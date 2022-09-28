@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
     if resource.admin?
       admin_root_path
     else
-      root_path
+      stored_location_for(resource) || root_url
     end
   end
 end

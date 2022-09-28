@@ -6,7 +6,7 @@ FactoryBot.define do
     f.description {Faker::Lorem.sentence(word_count: 50)}
     f.release_date {Faker::Date.between(from: "2023-01-23", to: "2023-09-30")}
     f.language {Faker::Book.publisher}
-    f.duration {"01:30:59"}
+    f.duration {150}
     f.thumbnail {Faker::Avatar.image}
     f.cast {Faker::Artist.name}
     sequence(:director) {|n| Faker::Lorem.word + n.to_s}

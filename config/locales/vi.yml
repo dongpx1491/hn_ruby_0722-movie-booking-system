@@ -57,6 +57,8 @@ vi:
       log_out: "Đăng xuất"
       orders_history: "Lịch sử  thanh toán"
       searching: "Tìm kiếm....."
+      sign_up: "Đăng kí"
+      log_in: "Đăng nhập"
     footer:
       copyright: "Bản quyền"
       reserved: "Đã đăng ký bản quyền | Mẫu này được làm bằng"
@@ -67,7 +69,7 @@ vi:
       shows_list: "Danh sách suất chiếu"
       movies: "phim"
       shows: "Suất chiếu"
-      start: "Từ ngày: "
+      at: "Ngày: "
       end: "Đến ngày: "
       search: "Tìm kiếm"
     show:

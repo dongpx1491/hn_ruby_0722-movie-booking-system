@@ -36,8 +36,8 @@ class Payment < ApplicationRecord
     created_at < Settings.payment.expired.minutes.ago && inactive?
   end
 
-  ransacker :created_at, type: :date do
-    Arel.sql("date(created_at at time zone 'UTC' at time zone 'Hanoi')")
+  ransacker :activated_at, type: :date do
+    Arel.sql("Date(activated_at)")
   end
 
   class << self

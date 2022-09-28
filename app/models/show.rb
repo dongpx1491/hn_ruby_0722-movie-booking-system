@@ -12,7 +12,11 @@ class Show < ApplicationRecord
   scope :incre_order, ->{order id: :asc}
   scope :asc_date, ->{order date: :asc}
   scope :asc_time, ->{order start_time: :asc}
-
+  scope :date_available, (lambda do
+                            where("date > Date(?) OR
+                                  (date = Date(?) AND start_time > Time(?))",
+                                  Time.zone.now, Time.zone.now, Time.zone.now)
+                          end)
   delegate :title, to: :movie, prefix: :movie
   delegate :name, to: :room, prefix: :room
 

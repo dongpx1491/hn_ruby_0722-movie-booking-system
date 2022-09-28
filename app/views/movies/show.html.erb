@@ -60,13 +60,16 @@
                   <ul>
                     <li><span><%= t ".language" %></span><%= @movie.language %></li>
                     <li><span><%= t ".genre" %></span><%= @movie.genre.name %></li>
-                    <li><span><%= t ".duration" %></span><%= l(@movie.duration, format: :own) %></li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="anime__details__btn">
-              <%= render "favorites_button" %>
+              <% if user_signed_in? %>
+                <%= render "favorites_button" %>
+              <% else %>
+                <%= render "add_favorite" %>
+              <% end %>
               <% if @movie.active? %>
                 <%= link_to movie_shows_path(@movie), class: "watch-btn" do %>
                   <span><%= t ".booking" %></span> <i class="fa fa-angle-right"></i>
