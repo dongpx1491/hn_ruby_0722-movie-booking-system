@@ -18,11 +18,11 @@ class PaymentsController < ApplicationController
     @payment = Payment.find_by id: params[:id]
     if @payment.destroy
       flash[:success] = t ".success"
+      render :non_payment
     else
       flash[:danger] = t ".danger"
+      redirect_to payment_path(current_payment)
     end
-
-    render :non_payment
   end
 
   private
@@ -31,7 +31,7 @@ class PaymentsController < ApplicationController
     @payment = current_payment
     return if @payment
 
-    flash[:danger] = t ".danger"
+    flash[:danger] = t ".not_found"
     redirect_to root_path
   end
 

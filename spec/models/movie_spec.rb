@@ -35,18 +35,6 @@ RSpec.describe Movie, type: :model do
     it "latest" do
       Movie.latest.pluck(:id).should eq([movie_3.id, movie_2.id, movie_1.id])
     end
-    context "search_by_name_or_description" do
-      it "search empty" do
-        Movie.search("").pluck(:id).should eq(Movie.all.pluck(:id))
-      end
-
-      it "search content no match" do
-        Movie.search("ChingChong").pluck(:id).should eq([])
-      end
-      it "search content match" do
-        Movie.search("matr").pluck(:id).should eq([movie_2.id])
-      end
-    end
   end
 
   describe "instance method" do

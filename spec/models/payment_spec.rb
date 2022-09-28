@@ -18,10 +18,6 @@ RSpec.describe Payment, type: :model do
     it "latest payment" do
       Payment.latest.pluck(:id).should eq([payment_3.id, payment_1.id, payment_2.id])
     end
-
-    it "show_active" do
-      Payment.show_active.pluck(:id).count.should eq 2
-    end
   end
 
   describe "Payment method" do

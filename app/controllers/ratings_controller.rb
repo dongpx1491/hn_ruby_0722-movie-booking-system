@@ -1,6 +1,5 @@
 class RatingsController < ApplicationController
   before_action :authenticate_user!, :find_movie
-  authorize_resource
 
   def create
     @rating = current_user.ratings.build(movie_id: params[:movie_id],

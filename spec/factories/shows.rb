@@ -6,7 +6,7 @@ FactoryBot.define do
     f.start_time {Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
     movie {FactoryBot.create :movie, status: :active}
     room {FactoryBot.create :room}
-    f.movie_id {movie_id.id}
-    f.room_id {room_id.id}
+    f.movie_id {movie.id}
+    f.room_id {room.id}
   end
 end
