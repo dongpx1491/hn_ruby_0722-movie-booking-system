@@ -11,10 +11,21 @@
           <nav class="header__menu mobile-menu">
             <ul>
               <li class="active"><%= link_to t(".homepage"), root_path %></li>
-              <li><a href="#"><%= t ".booking" %></a></li>
-              <li><a href="#"><%= t ".blog" %></a></li>
-              <li><<%= link_to t(".favorites"), favorites_path %></li>
-              <li><%= link_to t(".orders_history"), order_historys_path %></li>
+              <% if user_signed_in? %>
+                <li><<%= link_to t(".favorites"), favorites_path %></li>
+                <li><%= link_to t(".orders_history"), order_historys_path %></li>
+                <li>
+                  <%= link_to edit_user_registration_path do%>
+                    <i class="fa-solid fa-user"></i>
+                    <span>     </span>
+                    <%= current_user.name %>
+                  <% end %>
+                </li>
+                <li><%= link_to t(".log_out"), destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to t(".sign_up"), new_user_registration_path %></li>
+                <li><%= link_to t(".log_in"), new_user_session_path %></li>
+              <% end %>
             </ul>
           </nav>
         </div>
@@ -31,7 +42,6 @@
                 </div>
               </a>
             </li>
-            <% if user_signed_in? %>
               <% if have_payment? %>
                 <li>
                   <%= link_to payment_path(current_payment) do %>
@@ -39,25 +49,8 @@
                   <% end%>
                 </li>
               <% end %>
-              <li>
-                <a><i class="fa-solid fa-user"></i></a>
-                <ul class="dropdown">
-                  <li><%= link_to t(".edit"), edit_user_registration_path %></li>
-                  <li>
-                    <%= link_to t(".log_out"), destroy_user_session_path, method: :delete %>
-                  </li>
-                </ul>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to new_user_session_path do %>
-                  <i class="fa-solid fa-eye"></i>
-                <% end %>
-              </li>
-            <% end %>
             <li>
               <%= link_to t(".english"), locale: :en %>
-              <span> | </span>
               <%= link_to t(".vietnamese"), locale: :vi %>
             </li>
           </ul>

@@ -57,6 +57,8 @@ en:
       log_out: "Log out"
       orders_history: "Orders History"
       searching: "Search here....."
+      sign_up: "Sign up"
+      log_in: "Log in"
     footer:
       copyright: "Copyright"
       reserved: "All rights reserved | This template is made with"
@@ -67,7 +69,7 @@ en:
       shows_list: "Shows list"
       movies: "movie"
       shows: "Shows"
-      start: "Start date:"
+      at: "Date:"
       end: "End date:"
       search: "Search"
     show:

@@ -27,12 +27,8 @@
 <%= search_form_for @search_show, url: movie_shows_path, remote: true do |f| %>
   <div class="row top_mar">
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-      <%= f.label :date, t(".start"), class:"form-label white_text" %>
-      <%= f.date_field :date_date_gteq, class:"form-control" %>
-    </div>
-    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-      <%= f.label :date, t(".end"), class:"form-label white_text" %>
-      <%= f.date_field :date_date_lteq, class:"form-control" %>
+      <%= f.label :date, t(".at"), class:"form-label white_text" %>
+      <%= f.date_field :date_date_equals, class:"form-control" %>
     </div>
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-2">
       <label class="form-label"> .</label>

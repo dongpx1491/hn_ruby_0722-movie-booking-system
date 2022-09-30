@@ -5,7 +5,8 @@
 @import 'mixins';
 
 .main_content {
-    min-height: 600px !important;
+    min-height: 700px !important;
+    // padding-top: 30px ;
 }
 
 .title_h3 {
@@ -149,6 +150,16 @@ table {
             background-color: #515e7741;
         }
     }
+}
+.breadcrumb-option {
+    padding-top: 5px !important;
+}
+.header__right {
+    margin-top: 20px;
+}
+
+.product {
+    padding-top: 35px !important;
 }
 
 .product__item__pic .ep1 {

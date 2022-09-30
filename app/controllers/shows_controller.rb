@@ -1,14 +1,13 @@
 class ShowsController < ApplicationController
   before_action :find_movie
   authorize_resource
-  before_action :authenticate_user!, only: :show
 
   def index
     @search_show = @movie.shows.ransack(params[:q])
     if @search_show.sorts.empty?
       @search_show.sorts = ["date asc", "start_time asc"]
     end
-    @pagy, @shows = pagy @search_show.result
+    @pagy, @shows = pagy @search_show.result.date_available
   end
 
   def show

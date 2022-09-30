@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   authorize_resource
+  before_action :authenticate_user!
 
   def index
     @pagy, @movies = pagy current_user.movies.latest

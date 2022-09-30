@@ -24,7 +24,7 @@ movie:
   image:
     image_movie: [350, 300]
 payment:
-  expired: 15
+  expired: 1
 rating:
   comment:
     max_length: 700

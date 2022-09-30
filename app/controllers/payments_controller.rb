@@ -31,7 +31,7 @@ class PaymentsController < ApplicationController
     @payment = current_payment
     return if @payment
 
-    flash[:danger] = t ".not_found"
+    flash[:danger] = t ".danger"
     redirect_to root_path
   end
 
@@ -39,6 +39,7 @@ class PaymentsController < ApplicationController
     return unless @payment.payment_expired?
 
     delete_payment
+    @payment.destroy
     flash[:danger] = t ".danger"
     redirect_to root_path
   end

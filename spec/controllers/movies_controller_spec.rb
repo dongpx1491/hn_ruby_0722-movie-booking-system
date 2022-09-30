@@ -1,7 +1,13 @@
 require "rails_helper"
 
 RSpec.describe MoviesController, type: :controller do
-
+  let!(:user) {FactoryBot.create :user}
+  before do
+    allow(controller).to receive(:current_user).and_return(user)
+    sign_in user
+    allow(controller).to receive(:authenticate_user!).and_return true
+  end
+  
   describe "GET #show" do
     let!(:movie) {FactoryBot.create :movie}
 
