@@ -4,7 +4,14 @@
   <th><%= image_tag(movie.image, class:"image_tag") if movie.image.attached? %></th>
   <th><%= movie.release_date %></th>
   <th><%= movie.genre_name %></th>
-  <th><%= movie.status %></th>
+  <th>
+    <%= form_for [:admin, movie], html: {class: "form-check form-switch"} do |f| %>
+      <label>
+        <%= f.check_box :status_before_type_cast, {id: "movie-status", class: "form-check-input"}%>
+        <span class="slider rounder"></span>
+      </label>
+    <% end %>
+  </th>
   <th>
     <%= link_to edit_admin_movie_path(movie) do %>
       <span class="fa fa-pencil"></span>

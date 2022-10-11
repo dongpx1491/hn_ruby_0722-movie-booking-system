@@ -18,6 +18,7 @@ en:
   movie_create: "Movie create successfully"
   movie_create_failed: "Create failed"
   movie_delete_denied: "Cannot delete because there were shows associated to this movie"
+  movie_update_denied: "Cannot update because there were shows associated to this movie"
   show_update: "Show updated"
   show_update_failed: "Update failed"
   show_delete: "Show deleted"
@@ -26,6 +27,9 @@ en:
   show_create_failed: "Create failed"
   show_delete_denied: "Cannot delete because there were tickets sold for this show"
   overlap: "Times overlap another showtime on this screen"
+  daily_revenue: "Daily revenue"
+  report_date: "Report date"
+  today_revenue: "Today revenue:"
   date:
     formats:
       own: "%d-%m-%Y"
@@ -245,6 +249,11 @@ en:
       p1: "To reset your password click the link below:"
       p2: "This link will expire in two hours."
       p3: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
+    monthly_revenue:
+      report_month: "Report month"
+      this_month_total_revenue: "This month total revenue"
+      details: "Details"
+      movie_revenue: "Movie revenue"
   account_activations:
     edit:
       activated: "Account activated!"
@@ -285,6 +294,9 @@ en:
         action: "Action"
       new:
         create: "Create new genre"
+      search:
+        search_by_name: "Search by name"
+        search: "Search"
     layouts:
       sidebar:
         dashboard: "Dashboard"
@@ -326,3 +338,6 @@ en:
         create: "Create"
       movie:
         confirm: "Are you sure?"
+      search:
+        search_by_name_or_descption: "Search by name or description"
+        search: "Search"

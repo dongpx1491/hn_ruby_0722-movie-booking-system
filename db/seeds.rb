@@ -61,7 +61,7 @@ end
 end
 
 5.times do
-  date = Faker::Date.between(from: "2022-07-23", to: "2022-09-30")
+  date = Faker::Date.between(from: Time.zone.today, to: "2022-10-30")
   rd = rand(10..22)
   start_time = "#{rd}:00:00"
   Show.create!(date: date,

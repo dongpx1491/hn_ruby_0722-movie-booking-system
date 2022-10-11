@@ -26,6 +26,7 @@ vi:
   show_create_failed: "Tạo thất bại"
   show_delete_denied: "Không thể xóa do đang có vé đã được bán cho suất chiếu này"
   overlap: "Đang có phim được chiếu trong cùng khung giờ"
+  daily_revenue: "Báo cáo doanh thu hàng ngày"
   date:
     formats:
       own: "%d-%m-%Y"
@@ -272,6 +273,8 @@ vi:
       success: "Mật khẩu đã được đặt lại"
       danger: "Đặt lại mật khẩu thất bại"
       not_found: "Không tìm thấy địa chỉ emails"
+  user_mailer:
+
   admin:
     genres:
       form:
@@ -325,3 +328,6 @@ vi:
         create: "Tạo mới"
       movie:
         confirm: "Bạn có chắc chắn không?"
+      search:
+        search_by_name_or_descption: "Tìm kiếm theo tên hoặc mô tả"
+        search: "Tìm kiếm"

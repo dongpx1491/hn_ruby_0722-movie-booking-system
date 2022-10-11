@@ -35,3 +35,11 @@ $(document).on('turbolinks:load', function () {
   }
   linkColor.forEach(l => l.addEventListener('click', colorLink))
 });
+
+$(document).on('turbolinks:load', function(){
+  $('input[id="movie-status"]').on("click", function(){
+    let check_val = $(this).is(':checked');
+
+    $(this).closest('form').submit();
+  });
+});

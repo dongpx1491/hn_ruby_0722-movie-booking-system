@@ -28,12 +28,10 @@ class Admin::MoviesController < Admin::AdminController
   def edit; end
 
   def update
-    if @movie.update movie_params
-      flash[:success] = t "movie_update"
-      redirect_to admin_movies_path
+    if params.dig(:movie, :status_before_type_cast)
+      update_active
     else
-      flash[:danger] = t "movie_update_failed"
-      render :edit
+      update_all
     end
   end
 
@@ -63,5 +61,28 @@ class Admin::MoviesController < Admin::AdminController
 
   def load_genre
     @genres = Genre.asc_genre_name
+  end
+
+  def update_active
+    if @movie.shows.empty?
+      if @movie.update_column(:status,
+                              params.dig(:movie, :status_before_type_cast))
+        flash[:success] = t("success")
+      else
+        flash[:danger] = t("danger")
+      end
+    else
+      flash[:danger] = t("movie_update_denied")
+    end
+    redirect_to admin_movies_path
+  end
+
+  def update_all
+    if @movie.update movie_params
+      flash[:success] = t(".success")
+      redirect_to admin_movies_path
+    else
+      render :edit
+    end
   end
 end
