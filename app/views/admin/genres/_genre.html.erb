@@ -3,11 +3,11 @@
   <th><%= genre.name %></th>
   <th>
     <%= link_to edit_admin_genre_path(genre), class: "edit" do %>
-      <span class="fa fa-pencil"></span>
+      <span class="fa-solid fa-pencil"></span>
     <% end %>
     <%= link_to admin_genre_path(genre), method: :delete,
           data: { confirm: t(".confirm")}, class: "delete" do %>
-      <span class="fa fa-trash"></span>
+      <span class="fa-solid fa-trash-can" style="color: red"></span>
     <% end %>
   </th>
 </tr>

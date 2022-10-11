@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "3.0.2"
+gem "active_model_serializers"
 gem "active_storage_validations", "0.8.2"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
@@ -18,6 +19,7 @@ gem "font-awesome-sass", "~> 6.1.2"
 gem "image_processing", "1.12.1"
 gem "jbuilder", "~> 2.7"
 gem "jquery-rails"
+gem "jwt"
 gem "mini_magick", "4.9.5"
 gem "mysql2", "~> 0.5.4"
 gem "omniauth"

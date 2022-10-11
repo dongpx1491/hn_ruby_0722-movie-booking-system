@@ -12,7 +12,7 @@
             <ul>
               <li class="active"><%= link_to t(".homepage"), root_path %></li>
               <% if user_signed_in? %>
-                <li><<%= link_to t(".favorites"), favorites_path %></li>
+                <li><%= link_to t(".favorites"), favorites_path %></li>
                 <li><%= link_to t(".orders_history"), order_historys_path %></li>
                 <li>
                   <%= link_to edit_user_registration_path do%>

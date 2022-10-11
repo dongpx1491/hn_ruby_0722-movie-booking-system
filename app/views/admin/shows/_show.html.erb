@@ -9,7 +9,8 @@
     <%= link_to edit_admin_show_path(show) do %>
       <span class="fa fa-pencil"></span>
     <% end %>
-    <%= link_to '#' do %>
+    <%= link_to admin_show_path(show), method: :delete,
+          data: { confirm: "Are you sure?"} do %>
       <span class="fa fa-trash"></span>
     <% end %>
   </th>

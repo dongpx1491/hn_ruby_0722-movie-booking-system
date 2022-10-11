@@ -30,6 +30,7 @@ en:
   daily_revenue: "Daily revenue"
   report_date: "Report date"
   today_revenue: "Today revenue:"
+  monthly_revenue: "Monthly revenue"
   date:
     formats:
       own: "%d-%m-%Y"
@@ -341,3 +342,7 @@ en:
       search:
         search_by_name_or_descption: "Search by name or description"
         search: "Search"
+    payments:
+      search:
+        search: "Search"
+        search_by_title: "Search by title"
