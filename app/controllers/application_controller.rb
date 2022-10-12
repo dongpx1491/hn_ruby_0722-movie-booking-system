@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   include PaymentsHelper
   include FavoritesHelper
   include Admin::PaymentsHelper
