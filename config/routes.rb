@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     resources :favorites, only: %i(index create destroy)
     resources :ratings, only: :create
     resources :payment_activations, only: :edit
-    resources :movies, only: %i(index show) do
+    resources :movies, only: :show do
       resources :shows
     end
     mount Sidekiq::Web => "/sidekiq"
@@ -34,7 +34,11 @@ Rails.application.routes.draw do
           resources :users
           resources :movies
         end
+        resources :movies, only: :show do
+          resources :shows
+        end
         post "auth/login", to: "authentication#sign_up"
+        get "/movies", to: "movies#sort"
       end
     end
   end

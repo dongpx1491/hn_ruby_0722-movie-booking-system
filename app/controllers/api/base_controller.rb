@@ -3,6 +3,7 @@ module Api
     include Pagy::Backend
     include ExceptionHandler
     include UsersHelper
+    before_action :ransack_movie
 
     protected
 
@@ -17,6 +18,10 @@ module Api
         status: 401,
         type: "failure"
       }, status: :unauthorized
+    end
+
+    def ransack_movie
+      @search = Movie.ransack(params[:m])
     end
   end
 end

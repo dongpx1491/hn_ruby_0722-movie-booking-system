@@ -19,7 +19,7 @@ class Show < ApplicationRecord
                           end)
   scope :date, ->{where "date >= ?", Time.zone.today}
   scope :created_date, ->(date){where "date = ?", date}
-  scope :created_month, (lamda do
+  scope :created_month, (lambda do
                            where("MONTH(date) = month(?)
                                   AND YEAR(date) = year(?)",
                                  Time.zone.today, Time.zone.today)
