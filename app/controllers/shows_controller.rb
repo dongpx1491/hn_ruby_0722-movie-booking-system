@@ -17,11 +17,11 @@ class ShowsController < ApplicationController
       init_payment @payment
     end
     @show = @movie.shows.find_by id: params[:id]
-    @seats = @show.room.seats
+    @seats = @show.room.seatsasdasdasdasd
   end
 
   private
-
+asdasdasdasdasd
   def find_movie
     @movie = Movie.find_by id: params[:movie_id]
     return if @movie
